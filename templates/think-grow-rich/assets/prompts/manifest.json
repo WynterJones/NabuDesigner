@@ -1,0 +1,85 @@
+{
+  "note": "Each prompt = brand.json.styleSignature + subjectPrompt. Engine: fal.ai (FLUX1.1 pro ultra for stills/icons, Ideogram v3 for the button). Transparency via `fal.py bg` (BiRefNet) then `imgkit alpha`; scenes/portraits via `imgkit webp`. The book cover and Hill portrait are the user-supplied real source assets (not generated) — only matted/treated. seed 19370 across the set.",
+  "assets": [
+    {
+      "id": "hero-deco",
+      "type": "scene",
+      "engine": "fal:flux-pro/v1.1-ultra",
+      "subjectPrompt": "An ornate symmetrical art-deco golden SUNBURST radiating from center, concentric stepped arcs and fine rays, fan/chevron deco border, deep emerald-black, large empty center for the book.",
+      "post": "imgkit webp --max 1920 --quality 86",
+      "out": "assets/img/hero-deco.webp"
+    },
+    {
+      "id": "book",
+      "type": "product",
+      "engine": "source (user-supplied cover) -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Real 'Think and Grow Rich' paperback cover, background removed.",
+      "post": "fal.py bg ; imgkit alpha --size 900",
+      "out": "assets/img/book.png"
+    },
+    {
+      "id": "hill",
+      "type": "portrait",
+      "engine": "source (user-supplied vintage photo) -> imgkit webp",
+      "subjectPrompt": "Vintage black-and-white portrait of Napoleon Hill holding the book; tinted to sepia/gold duotone in CSS.",
+      "post": "imgkit webp --max 1100 --quality 88",
+      "out": "assets/img/hill.webp"
+    },
+    {
+      "id": "logo-mark",
+      "type": "logo",
+      "engine": "fal:flux-pro/v1.1-ultra -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Art-deco circular medallion emblem: concentric stepped gold rings, radiating sunburst, central monogram + upward arrow.",
+      "post": "fal.py bg ; imgkit alpha --size 512 ; imgkit favicon --size 256",
+      "out": "brand/logo-mark.png"
+    },
+    {
+      "id": "icon-set",
+      "type": "icon",
+      "engine": "fal:flux-pro/v1.1-ultra -> imgkit webp (circle-cropped in CSS)",
+      "subjectPrompt": "Six matching art-deco gold medallion icons (Desire=flame, Faith=sunrise, Auto-Suggestion=mind, Specialized Knowledge=book+key, Persistence=mountain, Mastermind=knot) — one shared deco descriptor.",
+      "post": "imgkit webp --max 480 --quality 86",
+      "out": "assets/img/ic-{desire,faith,mind,knowledge,persist,mastermind}.webp"
+    },
+    {
+      "id": "seal",
+      "type": "badge",
+      "engine": "fal:flux-pro/v1.1-ultra -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Art-deco award seal: laurel wreath + crown + ribbon banner, empty gold center for an HTML number overlay.",
+      "post": "fal.py bg ; imgkit alpha --size 520",
+      "out": "assets/img/seal.png"
+    },
+    {
+      "id": "star",
+      "type": "chrome",
+      "engine": "fal:flux-pro/v1.1-ultra -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Single faceted five-point gold art-deco star (rating glyph + divider centerpiece).",
+      "post": "fal.py bg ; imgkit alpha --size 240",
+      "out": "assets/img/star.png"
+    },
+    {
+      "id": "quote",
+      "type": "chrome",
+      "engine": "fal:flux-pro/v1.1-ultra -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Large art-deco gold quotation/flourish ornament for the pull-quote band.",
+      "post": "fal.py bg ; imgkit alpha --size 360",
+      "out": "assets/img/quote.png"
+    },
+    {
+      "id": "btn-cta",
+      "type": "button",
+      "engine": "fal:ideogram/v3 -> fal.py bg -> imgkit alpha",
+      "subjectPrompt": "Wide embossed antique-gold art-deco pill, one line of engraved deco capitals reading exactly 'BUY ON AMAZON'. THE one image CTA; reused at hero, offer and final CTA. Every other button is CSS.",
+      "post": "fal.py bg ; imgkit alpha --pad 6",
+      "out": "assets/img/btn-cta.png"
+    },
+    {
+      "id": "noise",
+      "type": "texture",
+      "engine": "Pillow (procedural)",
+      "subjectPrompt": "Tiny tiled monochrome grain for the page-wide overlay.",
+      "post": "160x160 RGBA, mix-blend overlay at ~5% opacity",
+      "out": "assets/img/noise.png"
+    }
+  ]
+}

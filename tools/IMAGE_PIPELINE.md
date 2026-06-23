@@ -98,9 +98,12 @@ HTML over the texture — never bake text into the image.
 
 - **Logo** — "minimal logo emblem on a solid pure white background: <mark>. Flat
   vector, two-tone <hexes>." → `keyout --trim --pad 56 --size 640`.
-- **Icon set** — generate each on white with one shared descriptor ("even medium
-  stroke, two-tone <hexes>, matches a cohesive icon set") so they read as a set.
-  → `keyout --trim --pad 36 --size 256`.
+- **Icon set** — generate each with one shared descriptor ("even medium stroke,
+  two-tone <hexes>, matches a cohesive icon set") so they read as a set. **Matte
+  with fal `bg` (BiRefNet), not `keyout`** — colour-keying leaves grey halos/boxes
+  when the model paints a tinted (non-pure-white) backdrop or soft shadows:
+  `fal.py bg raw/ic-x.jpg raw/ic-x-cut.png` → `imgkit alpha ... --pad 28 --size 256
+  --square`. (`keyout` is the no-API fallback only.)
 - **Scene** — describe subject + reuse `styleSignature`; leave open space for copy.
   → `webp --max 1600`.
 - **Tiny chrome** (checkmarks, dividers) — use inline SVG, not AI. Crisp at any

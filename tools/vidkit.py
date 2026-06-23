@@ -19,6 +19,11 @@ poster IN OUT [--time 0]
 loop   IN OUT [--xfade 0.5]
     Make a seamless loop by cross-fading the tail back over the head.
 
+pingpong IN OUT [--crf 30]
+    Forward-then-reversed "boomerang" loop: the clip plays out and rewinds so
+    start/end frames always match — no hard cut at the seam. Smoothest idle for
+    a muted autoplay <video>. Doubles the duration (5s clip -> ~10s loop).
+
 Examples
 --------
     python3 tools/vidkit.py web    raw/hero.mp4 assets/video/hero.mp4 --max 1280
@@ -72,6 +77,20 @@ def cmd_loop(a):
     print(f"loop -> {a.OUT}")
 
 
+def cmd_pingpong(a):
+    # Forward then reversed = a "boomerang" loop. The clip plays out and
+    # rewinds, so the start/end frames always match and there is NO hard cut
+    # at the loop seam — smoothest possible idle for a muted autoplay <video>.
+    # Drop the duplicated turnaround/seam frames so motion doesn't stutter.
+    flt = ("[0:v]split[f][r];"
+           "[r]reverse,trim=start_frame=1,setpts=PTS-STARTPTS[rev];"
+           "[f][rev]concat=n=2:v=1:a=0,format=yuv420p[v]")
+    run([FF, "-y", "-i", a.IN, "-filter_complex", flt, "-map", "[v]", "-an",
+         "-c:v", "libx264", "-profile:v", "high", "-pix_fmt", "yuv420p",
+         "-crf", str(a.crf), "-preset", "slow", "-movflags", "+faststart", a.OUT])
+    print(f"pingpong -> {a.OUT}")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     s = p.add_subparsers(dest="cmd", required=True)
@@ -89,6 +108,9 @@ def main():
 
     lo = s.add_parser("loop"); lo.add_argument("IN"); lo.add_argument("OUT")
     lo.add_argument("--xfade", type=float, default=0.5); lo.set_defaults(func=cmd_loop)
+
+    pp = s.add_parser("pingpong"); pp.add_argument("IN"); pp.add_argument("OUT")
+    pp.add_argument("--crf", type=int, default=30); pp.set_defaults(func=cmd_pingpong)
 
     a = p.parse_args(); a.func(a)
 

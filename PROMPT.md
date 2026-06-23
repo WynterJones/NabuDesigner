@@ -152,6 +152,10 @@ cp -r templates/_blank templates/<slug>
   washed-out, cluttered; buttons that wrap, go two-tone, recolor, or typo).
 - **Gate:** first viewport has strong on-brand imagery; CTAs have hover/focus;
   logo/icons/scenes/CTA share one look; no fallback placeholders; works from disk.
+  **Contrast:** every button label (CSS *and* the image-CTA's baked-in
+  lettering) reads AA on its own fill — gold/pastel fills take dark ink, no
+  gold-on-gold or white-on-cream; the logo/wordmark and any badge/seal overlay
+  number read on both their light and dark placements.
 
 ### Stage 3 — Motion, detail & QA
 - Layer restrained motion: scroll reveal/stagger, parallax, sticky bar, count-ups,
@@ -230,6 +234,8 @@ AA contrast, no dead CTAs, favicon loads.
 Graphics-led, low-text, marketing-focused. Every asset passes the glance test —
 instant impact, strong focal point, rich color, readable silhouette. Full-image AI
 CTA buttons, no emojis, no invented SVG icon art. Layout varies from its siblings.
-Motion feels expensive, not busy. If anything looks generic, washed-out, cluttered,
-or a button is inconsistent — regenerate it. The page reads as a premium,
+Motion feels expensive, not busy. **Contrast is non-negotiable:** every button
+label, card/section text, logo, and badge/seal overlay reads AA against its own
+surface (not the page) — see DESIGN_GUIDELINES §2. If anything looks generic,
+washed-out, cluttered, low-contrast, or a button is inconsistent — regenerate it. The page reads as a premium,
 graphics-led marketing experience, not a document.

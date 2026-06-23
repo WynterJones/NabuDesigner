@@ -1,0 +1,34 @@
+{
+  "name": "Lumiere",
+  "tagline": "Win the glow.",
+  "fictional": true,
+  "seed": 64001,
+  "theme": "light luxe beauty",
+  "concept": "Luxury makeup giveaway (sweepstakes): enter email to win a $500 beauty bundle; closing CTA = 20% off coupon to shop the store.",
+  "audience": "middle-aged women (45-60), elegant and aspirational",
+  "styleSignature": "elegant luxury beauty editorial, soft glamorous lighting, blush pink rose-gold champagne and cream palette with deep plum accents, marble and silk textures, subtle gold foil, refined feminine sophistication, premium cosmetics, shallow depth of field, aspirational. No text, no words, no letters.",
+  "engines": {
+    "stills": "fal:flux-pro/v1.1-ultra",
+    "headline+cta+logo": "fal:ideogram/v3",
+    "video": "fal:kling-video/v2.5-turbo/pro/image-to-video",
+    "transparency": "fal:birefnet (fal.py bg) + imgkit alpha"
+  },
+  "palette": {
+    "bg": "#fbf5ef",
+    "bg2": "#f7e7e3",
+    "panel": "#ffffff",
+    "ink": "#3a2230",
+    "muted": "rgba(58,34,48,0.6)",
+    "line": "rgba(58,34,48,0.12)",
+    "rose": "#c98a93",
+    "roseDeep": "#9a5563",
+    "gold": "#cda349",
+    "plum": "#5e2a3c",
+    "blush": "#f3c9cf"
+  },
+  "cssButton": { "accent": "#cf97a0", "accentDeep": "#9a5563", "accentGlow": "rgba(183,110,121,0.4)" },
+  "type": { "display": "'Playfair Display', Georgia, serif", "body": "Inter, ui-sans-serif, system-ui, sans-serif" },
+  "radius": "18px",
+  "buttonStrategy": "ONE image CTA = assets/img/btn-shop.png (SHOP THE COLLECTION). All other buttons (Enter to Win, nav) are CSS .btn.",
+  "assets": { "logo": "brand/logo.png", "favicon": "brand/favicon.png", "headline": "assets/img/headline.png", "imageCta": "assets/img/btn-shop.png" }
+}

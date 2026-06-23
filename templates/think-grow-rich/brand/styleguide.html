@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Think and Grow Rich — Brand Styleguide</title>
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500&family=Spectral:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B130E;--bg2:#101B14;--paper:#F4EAD2;--ink:#1C160C;--cream:#EFE3C7;
+    --muted:#9C8F70;--gold:#C9A24B;--gold-light:#E8CE84;--gold-deep:#8F6F28;
+    --oxblood:#6E2230;--line:rgba(201,162,75,.28);
+    --display:"Playfair Display",Georgia,serif;--body:"Spectral",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--body);background:var(--bg);color:var(--cream);line-height:1.6;padding:48px clamp(20px,5vw,64px)}
+  h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+  .head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  .head img{width:56px;height:56px}
+  .head b{font-size:30px}
+  .head span{display:block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:42px}
+  section{margin:42px 0}
+  .lbl{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;
+    display:flex;align-items:center;gap:12px}
+  .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+  .sw{border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .sw .chip{height:72px}.sw .meta{padding:8px 10px;font-size:12px;background:var(--bg2)}
+  .sw .meta b{display:block;font-size:13px;color:var(--cream)}.sw .meta span{color:var(--muted)}
+  .type-row{border-bottom:1px solid var(--line);padding:18px 0}
+  .type-row small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .icons{display:flex;flex-wrap:wrap;gap:20px}
+  .icons figure{text-align:center;width:120px}
+  .icons img{width:96px;height:96px;border-radius:50%;border:1px solid var(--line)}
+  .icons figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+  .scene img{width:100%;border-radius:10px;border:1px solid var(--line)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--body);font-weight:700;
+    font-size:15px;padding:13px 26px;border-radius:999px;color:#1a1206;
+    background:linear-gradient(180deg,var(--gold-light),var(--gold) 60%,var(--gold-deep));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 24px rgba(201,162,75,.34)}
+  .img-cta img{width:300px;filter:drop-shadow(0 12px 26px rgba(201,162,75,.34))}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:24px}
+  .card.paper{background:var(--paper);color:var(--ink)}
+  @media(max-width:640px){.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="head">
+    <img src="logo-mark.png" alt="Think and Grow Rich emblem">
+    <div><b>Think and Grow Rich</b><span>Brand Styleguide</span></div>
+  </div>
+  <p class="sub">Vintage art-deco wealth aesthetic — deep emerald-black, antique gold foil, warm cream parchment. Editorial sales page for the 1937 Napoleon Hill classic.</p>
+
+  <section>
+    <div class="lbl">Palette</div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0B130E"></div><div class="meta"><b>Emerald-black</b><span>#0B130E</span></div></div>
+      <div class="sw"><div class="chip" style="background:#101B14"></div><div class="meta"><b>Emerald 2</b><span>#101B14</span></div></div>
+      <div class="sw"><div class="chip" style="background:#C9A24B"></div><div class="meta"><b>Gold</b><span>#C9A24B</span></div></div>
+      <div class="sw"><div class="chip" style="background:#E8CE84"></div><div class="meta"><b>Gold light</b><span>#E8CE84</span></div></div>
+      <div class="sw"><div class="chip" style="background:#8F6F28"></div><div class="meta"><b>Gold deep</b><span>#8F6F28</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F4EAD2"></div><div class="meta"><b>Parchment</b><span>#F4EAD2</span></div></div>
+      <div class="sw"><div class="chip" style="background:#EFE3C7"></div><div class="meta"><b>Cream</b><span>#EFE3C7</span></div></div>
+      <div class="sw"><div class="chip" style="background:#6E2230"></div><div class="meta"><b>Oxblood</b><span>#6E2230</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Typography</div>
+    <div class="type-row"><small>Playfair Display — Display 800</small><div style="font-family:var(--display);font-weight:800;font-size:52px;line-height:1.05">Think and Grow Rich</div></div>
+    <div class="type-row"><small>Playfair Display — Italic 500</small><div style="font-family:var(--display);font-style:italic;font-weight:500;font-size:34px">Whatever the mind can conceive…</div></div>
+    <div class="type-row"><small>Spectral — Body 400</small><div style="font-size:18px;max-width:60ch">The most influential success book ever written — thirteen timeless principles for turning desire into wealth, distilled from twenty-five years of research.</div></div>
+    <div class="type-row"><small>Spectral — Eyebrow 600 / letterspaced</small><div style="font-weight:600;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)">First Published 1937</div></div>
+  </section>
+
+  <section>
+    <div class="lbl">Icon set — the principles (circle-cropped medallions)</div>
+    <div class="icons">
+      <figure><img src="../assets/img/ic-desire.webp" alt="Desire"><figcaption>Desire</figcaption></figure>
+      <figure><img src="../assets/img/ic-faith.webp" alt="Faith"><figcaption>Faith</figcaption></figure>
+      <figure><img src="../assets/img/ic-mind.webp" alt="Auto-Suggestion"><figcaption>Auto-Suggestion</figcaption></figure>
+      <figure><img src="../assets/img/ic-knowledge.webp" alt="Specialized Knowledge"><figcaption>Knowledge</figcaption></figure>
+      <figure><img src="../assets/img/ic-persist.webp" alt="Persistence"><figcaption>Persistence</figcaption></figure>
+      <figure><img src="../assets/img/ic-mastermind.webp" alt="Master Mind"><figcaption>Master Mind</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Chrome — star, seal, quote ornament</div>
+    <div class="icons">
+      <figure><img style="border:0;border-radius:0" src="../assets/img/star.png" alt="Star"><figcaption>Star</figcaption></figure>
+      <figure><img style="border:0;border-radius:0" src="../assets/img/seal.png" alt="Seal"><figcaption>Seal</figcaption></figure>
+      <figure><img style="border:0;border-radius:0" src="../assets/img/quote.png" alt="Quote"><figcaption>Quote mark</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Buttons — one image CTA + CSS buttons</div>
+    <div class="cta-row">
+      <span class="img-cta"><img src="../assets/img/btn-cta.png" alt="Buy on Amazon"></span>
+      <a class="btn">Buy on Amazon</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Surfaces — dark card / parchment card</div>
+    <div class="row2">
+      <div class="card"><h3 style="color:var(--cream)">Dark surface</h3><p style="color:var(--muted)">Cream text on emerald. Gold accents and hairline borders.</p></div>
+      <div class="card paper"><h3 style="color:var(--ink)">Parchment surface</h3><p style="color:#4A3F2C">Dark ink on cream for editorial reading sections and reviews.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Signature scene — hero deco backdrop</div>
+    <div class="scene"><img src="../assets/img/hero-deco.webp" alt="Art-deco gold sunburst backdrop"></div>
+  </section>
+</body>
+</html>

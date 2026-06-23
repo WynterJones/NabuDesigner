@@ -28,6 +28,54 @@ doing its real job*, not a page describing the product:
 
 ---
 
+## 0. Entertainment-grade polish (LP-Templates house style)
+
+These landing pages are not utilitarian app screens — they are **premium,
+graphics-heavy marketing experiences** that must look expensive and "pop." The
+rules below sit *on top of* the rubric in the rest of this file. (See
+`skills/entertainment-designer/SKILL.md` for the how; this is the what.)
+
+- **Graphics-led, low text.** The page is a gallery, not an essay. One promise
+  per section, big visuals, one clear CTA per zone — never paragraph walls.
+- **Large accent graphics.** Oversized hero props, gradient orbs/blobs, 3D
+  shapes, mascots, cut-out characters, floating chips — generated, placed big and
+  bold, layered for depth with parallax. Accent graphics do real design work.
+- **Vary the layout per niche.** Cinematic, bento/UI, split, editorial, card,
+  giveaway, VSL/squeeze — pick an archetype that differs from sibling templates.
+  Two templates must not feel like one skeleton recolored.
+- **Headline graphics for the hero.** The hero headline earns a designed
+  treatment CSS can't match — a typographic image (gradient/3D/chrome/foil) or
+  CSS text plus a large accent graphic — lifted with `drop-shadow` + glow. Keep
+  an accessible `<h1>` (visually-hidden if the headline is an image).
+- **Buttons: ONE image CTA, CSS for the rest.** Exactly one art-directed,
+  generated image button for the primary CTA (reused for the final CTA if
+  wanted); every other button is a premium CSS button (gradient fill, inset
+  highlight, colored glow, hover lift). Don't image-ify every button.
+- **All iconography is generated image assets** (icons, checks, arrows, play
+  badges, seals, stars). **No emojis. No hand-authored or invented SVG icon
+  art.** CSS is for layout primitives only (gradients, rings, lines, blur, masks).
+- **Transparency via fal background removal** (BiRefNet), never colour-keying —
+  clean alpha edges on every cutout.
+- **Video = variety, not wallpaper.** A signature loop + vertical-video cards +
+  small animated accents — don't background-video every section. Always muted/
+  loop/playsinline with a poster; lazy-load below-the-fold. **Modal/popup videos
+  embed a real YouTube video**, never a generated clip.
+- **A mascot or host** when it fits the brand — large and recurring.
+- **Real motion polish, in passes.** Scroll reveals, multi-speed parallax,
+  particle/orb fields, glow pulses, count-ups, marquees, 3D tilt, micro-
+  interactions. Vanilla JS + curated libraries are both fine (GSAP/ScrollTrigger,
+  Lenis, SplitType, Swiper, tsParticles). Animate transform/opacity only (60fps).
+- **Modern CSS effects** are encouraged: `mask-image`/`clip-path` for image &
+  video masks, `mix-blend-mode` glow, `backdrop-filter` glass, native
+  scroll-driven animations, `background-clip:text` gradient headlines, oversized
+  bleeding images, `aspect-ratio` (no layout shift).
+- **No orphan words** in any headline/subhead (`text-wrap:balance`, `&nbsp;` on
+  trailing short phrases); re-check at every breakpoint.
+- **Always honor `prefers-reduced-motion`** and keep AA contrast over busy media
+  (use scrims/overlays). The non-negotiables in the checklist below still apply.
+
+---
+
 ## 1. Layout & structure
 
 - **Nothing cut off.** No content trailing past the right edge, no text
@@ -71,6 +119,34 @@ doing its real job*, not a page describing the product:
   a mockup and fails at runtime — lift it to a real dark ink value.
 - **Headings on tinted/gradient panels** get an explicit `color` chosen
   against the gradient's mid-tone, not just its brightest stop.
+- **Button labels contrast their fill (≥ 4.5:1) — check every variant.** A
+  label must read against the button's *actual* fill, not the page: white
+  text on a pale/gold/yellow/mint fill, dark text on a deep fill, or a label
+  that sits over the lighter stop of a gradient all fail. Verify primary,
+  ghost, hover, and disabled states — a ghost button's text often inherits a
+  page color that vanishes on the button's hover background. Gold/amber and
+  pastel fills almost always need **dark** ink, not white.
+- **Image/AI CTA buttons: eyeball the baked-in label too.** A generated
+  button (embossed/engraved/foil lettering) must stay legible against its own
+  material — gold-on-gold, white-on-cream, or a soft emboss with no tonal
+  break is unreadable. If the label doesn't pop at button size, regenerate
+  with a deeper recess/darker engraving or add a tonal contrast, and confirm
+  the `alt` matches the visible words.
+- **Card & tile text contrasts the card surface, not the section.** Text on a
+  tinted, glass, or gradient card is judged against the *card*; a muted token
+  tuned for the page background can fail on a darker/lighter card. Re-check
+  body, meta, eyebrows, and icon labels on every card surface.
+- **Text over photos, video, or busy art needs a scrim.** Lay a gradient/solid
+  overlay (or text-shadow as a backup) so headings and body clear AA over the
+  *brightest* region the media can show — not just the frame you previewed.
+- **Logos & wordmarks must read on light *and* dark.** A brand mark or CSS
+  wordmark used in both a dark nav and a light footer needs a fill that holds
+  on both, or a per-context variant. A gold/white mark disappears on cream; a
+  dark mark disappears on the hero. Don't ship a logo that's invisible in half
+  its placements.
+- **Numbers/text overlaid on badges & seals contrast the medallion.** A count
+  or label dropped onto a gold seal or colored badge uses dark ink on gold,
+  light ink on a deep badge — never same-tone-on-same-tone.
 - **Gradients are single-hue only.** One hue, two lightness/saturation
   stops. Never blend two different hues (no blue→purple, mint→amber,
   purple→pink). Picking a color means picking *one* color; the gradient
@@ -337,6 +413,9 @@ Run before shipping a screen. Fast.
 - [ ] Nothing cut off / overlapping / empty; no sideways page scroll
 - [ ] Body text passes AA; no light-on-light eyebrows or headings
 - [ ] All gradients single-hue
+- [ ] Every button label passes AA on its own fill (primary/ghost/hover/disabled); image-CTA baked-in label legible at size; gold/pastel fills use dark ink
+- [ ] Card/tile text contrasts the card surface; text over photos/video has a scrim
+- [ ] Logo/wordmark + any badge/seal overlay text read on both light and dark placements
 - [ ] Buttons look like buttons (chrome + centered label); same-row controls share height
 - [ ] Labels fit one line; badges `nowrap`
 - [ ] Inputs aligned; labels stack when narrow; textareas auto-grow; visible focus rings

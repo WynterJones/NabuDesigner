@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumière — Win the Glow · The $500 Beauty Giveaway</title>
+    <meta name="description" content="Fictional luxury beauty giveaway landing-page template: enter to win a $500 makeup bundle, then claim a coupon to shop the collection.">
+    <link rel="icon" type="image/png" href="brand/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <a class="brand" href="#top" aria-label="Lumière home">
+        <img src="brand/logo.png" alt="" height="34">
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#prizes">Prizes</a>
+        <a href="#how">How to enter</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <a class="btn btn-sm" href="#enter">Enter to win</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&times;</button>
+      <a href="#prizes">Prizes</a>
+      <a href="#how">How to enter</a>
+      <a href="#reviews">Reviews</a>
+      <a class="btn" href="#enter">Enter to win</a>
+    </div>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" id="enter">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Complimentary beauty giveaway</p>
+          <h1 class="sr-only">Win the glow — the $500 Lumière beauty giveaway</h1>
+          <img class="headline reveal" src="assets/img/headline.png" alt="Win the glow" width="560">
+          <p class="lede reveal">Enter for your chance to win the complete Lumière collection — a <strong>$500</strong> set of our most-loved makeup &amp; skincare. <em>Fictional demo template.</em></p>
+
+          <form class="enter-card reveal" id="enterForm" novalidate>
+            <div class="field"><label for="fn">First name</label><input id="fn" name="fn" type="text" autocomplete="given-name" placeholder="Your first name" required></div>
+            <div class="field"><label for="em">Email address</label><input id="em" name="em" type="email" autocomplete="email" placeholder="you@email.com" required></div>
+            <button class="btn btn-lg" type="submit">Enter to win</button>
+            <p class="form-note">No purchase necessary · We respect your privacy · Demo form</p>
+            <p class="form-done" id="formDone" hidden>You're entered! Winner announced Sunday. <span>(Fictional demo — nothing was submitted.)</span></p>
+          </form>
+
+          <ul class="trust reveal">
+            <li><b id="cd">—</b><span>left to enter</span></li>
+            <li><b><span data-count="12480">0</span>+</b><span>women entered</span></li>
+            <li><b>$500</b><span>prize value</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-art reveal">
+          <div class="hero-frame tilt">
+            <video class="media" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+              <source src="assets/video/hero.mp4" type="video/mp4">
+            </video>
+          </div>
+          <span class="value-badge">$500<small>value</small></span>
+        </div>
+      </section>
+
+      <!-- PRIZES -->
+      <section class="prizes" id="prizes">
+        <div class="sec-head reveal">
+          <p class="eyebrow">The prize</p>
+          <h2>Everything you need<br>to glow.</h2>
+          <p class="sec-sub">One lucky winner receives the full collection — beautifully boxed.</p>
+        </div>
+        <div class="prize-grid">
+          <figure class="prize reveal"><img src="assets/img/lipstick.webp" alt="Luxury gold lipstick"><figcaption><b>Satin Lipstick</b><span>$48</span></figcaption></figure>
+          <figure class="prize reveal"><img src="assets/img/palette.webp" alt="Champagne eyeshadow palette"><figcaption><b>Eyeshadow Palette</b><span>$120</span></figcaption></figure>
+          <figure class="prize reveal"><img src="assets/img/serum.webp" alt="Radiance serum"><figcaption><b>Radiance Serum</b><span>$165</span></figcaption></figure>
+          <figure class="prize reveal"><img src="assets/img/perfume.webp" alt="Signature eau de parfum"><figcaption><b>Eau de Parfum</b><span>$167</span></figcaption></figure>
+        </div>
+      </section>
+
+      <!-- HOW TO ENTER -->
+      <section class="how" id="how">
+        <div class="sec-head reveal">
+          <p class="eyebrow">How to enter</p>
+          <h2>Three little steps.</h2>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><img src="assets/img/ic-enter.png" alt="" width="72" height="72"><b>1 · Enter</b><p>Drop your name and email above — it takes ten seconds.</p></article>
+          <article class="step reveal"><img src="assets/img/ic-share.png" alt="" width="72" height="72"><b>2 · Share</b><p>Tell a friend for bonus entries and double your chances.</p></article>
+          <article class="step reveal"><img src="assets/img/ic-win.png" alt="" width="72" height="72"><b>3 · Win</b><p>We announce the winner on Sunday — everyone gets a treat.</p></article>
+        </div>
+      </section>
+
+      <!-- STORY BAND -->
+      <section class="story">
+        <div class="story-bg parallax" data-speed="0.16" style="background-image:url('assets/img/woman.webp')"></div>
+        <div class="story-scrim"></div>
+        <div class="story-inner reveal">
+          <p class="eyebrow">Why Lumière</p>
+          <h2>Beauty that feels<br>made for you.</h2>
+          <ul class="benefits">
+            <li><img src="assets/img/ic-check.png" alt="">Clean, kind-to-skin formulas</li>
+            <li><img src="assets/img/ic-check.png" alt="">Shades designed for radiant, mature skin</li>
+            <li><img src="assets/img/ic-check.png" alt="">Loved by 100,000+ women worldwide</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- REVIEWS + STATS -->
+      <section class="reviews" id="reviews">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Loved by women like you</p>
+          <h2>A little luxury,<br>every morning.</h2>
+        </div>
+        <div class="review-grid">
+          <blockquote class="review reveal"><p>"The serum gave me back a glow I thought was gone for good. I feel like myself again."</p><cite>— Diane, 58</cite></blockquote>
+          <blockquote class="review reveal"><p>"Finally a palette with shades that flatter my skin instead of fighting it. Obsessed."</p><cite>— Marguerite, 51</cite></blockquote>
+          <blockquote class="review reveal"><p>"Elegant, effortless, and it lasts all day. This is my new signature."</p><cite>— Yvonne, 47</cite></blockquote>
+        </div>
+        <ul class="stats reveal">
+          <li><b><span data-count="100">0</span>k+</b><span>happy customers</span></li>
+          <li><b>4.9</b><span>average rating</span></li>
+          <li><b><span data-count="12480">0</span></b><span>entered so far</span></li>
+          <li><b>$500</b><span>prize value</span></li>
+        </ul>
+      </section>
+
+      <!-- CLOSING COUPON CTA -->
+      <section class="coupon-sec">
+        <div class="coupon reveal">
+          <div class="coupon-left">
+            <p class="eyebrow">A gift, just for entering</p>
+            <h2>Enjoy 20% off<br>the collection.</h2>
+            <p>Whether you win or not, treat yourself — use your welcome code at checkout today.</p>
+            <a class="btn-cta" href="#enter" aria-label="Shop the collection"><img src="assets/img/btn-shop.png" alt="Shop the collection"></a>
+          </div>
+          <div class="coupon-code" aria-hidden="true">
+            <span class="cc-label">Welcome code</span>
+            <span class="cc-code">GLOW20</span>
+            <span class="cc-meta">20% off · ends Sunday</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <img src="brand/logo.png" alt="Lumière" height="26">
+      <p>Fictional luxury-beauty giveaway template by Nabu LP-Templates. No real prize, brand, or checkout. <a href="#enter">Giveaway rules</a></p>
+      <span>© 2026 Lumière</span>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

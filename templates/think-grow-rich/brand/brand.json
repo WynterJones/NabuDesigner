@@ -1,0 +1,47 @@
+{
+  "name": "Think and Grow Rich",
+  "tagline": "The 1937 classic that turned desire into fortune for millions.",
+  "fictional": false,
+  "seed": 19370,
+  "theme": "vintage art-deco wealth — emerald-black, antique gold foil, cream parchment",
+  "product": "Think and Grow Rich by Napoleon Hill — the landmark personal-success book, sold via Amazon",
+  "host": "none",
+  "styleSignature": "vintage art-deco luxury illustration, 1937 Gilded-Age wealth aesthetic, antique gold foil line-work with geometric sunburst and fan motifs, set on deep emerald-black (#0B130E) and warm cream parchment (#F4EAD2), rich antique gold (#C9A24B) with soft engraved metallic sheen and fine bevel highlights, subtle paper grain and ornamental deco geometry, refined museum-quality engraving, dramatic warm gallery lighting. No text, no words, no letters.",
+  "engines": {
+    "stills": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "icons": "fal:fal-ai/flux-pro/v1.1-ultra -> fal.py bg -> imgkit alpha (art-deco gold emblems, one shared descriptor)",
+    "buttons": "fal:fal-ai/ideogram/v3 (embossed antique-gold art-deco pill, engraved lettering, no candy-gloss)",
+    "logo": "fal:fal-ai/ideogram/v3 -> fal.py bg (gold deco monogram + wordmark lockup)"
+  },
+  "palette": {
+    "bg": "#0B130E",
+    "bg2": "#101B14",
+    "panel": "rgba(201,162,75,0.06)",
+    "paper": "#F4EAD2",
+    "paperStrong": "#FBF4E3",
+    "ink": "#1C160C",
+    "inkSoft": "#4A3F2C",
+    "cream": "#EFE3C7",
+    "muted": "#9C8F70",
+    "line": "rgba(201,162,75,0.28)",
+    "gold": "#C9A24B",
+    "goldLight": "#E8CE84",
+    "goldDeep": "#8F6F28",
+    "oxblood": "#6E2230"
+  },
+  "type": {
+    "display": "\"Playfair Display\", Georgia, serif",
+    "body": "\"Spectral\", Georgia, serif",
+    "displayWeight": 800,
+    "bodyWeight": 400
+  },
+  "radius": "4px",
+  "buttonColor": "embossed antique-gold deco pill with engraved lettering",
+  "layoutNotes": "EDITORIAL / long-form archetype (distinct from cinematic/bento/giveaway/VSL siblings). No video, no host widget (both optional in this kit). Sticky deco nav; literary hero with floating book cover + gold sunburst; proof stat strip with count-ups; Carnegie origin story split with Hill's vintage portrait (duotone); the 13 principles editorial list + 6 pillar deco icons; big gold pull-quote band; what's inside; reader acclaim with gold deco stars; buy/offer with book cover + ONE image CTA reading 'BUY ON AMAZON' (reused at final CTA); FAQ; final CTA + footer. Gold-foil dividers between bands. No emojis, no invented SVG icon art.",
+  "assets": {
+    "logo": "brand/logo.png",
+    "logoMark": "brand/logo-mark.png",
+    "favicon": "brand/favicon.png",
+    "styleBoard": "brand/style-board.webp"
+  }
+}

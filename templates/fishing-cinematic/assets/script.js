@@ -2,6 +2,14 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Lenis smooth scroll (premium feel; native scroll under the hood) */
+  var lenis = null;
+  if (window.Lenis && !reduce) {
+    lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
+    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })();
+  }
+
+
   /* reveal on scroll */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {

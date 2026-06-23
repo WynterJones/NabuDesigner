@@ -115,6 +115,13 @@ def cmd_image(a):
     if "flux" in a.model:  # flux-only params; other models reject them
         payload["output_format"] = a.format
         payload["enable_safety_checker"] = False
+    if "recraft" in a.model:  # recraft uses image_size (+ optional style), not aspect_ratio
+        payload.pop("aspect_ratio", None)
+        if a.imgsize:
+            w, h = a.imgsize.lower().split("x")
+            payload["image_size"] = {"width": int(w), "height": int(h)}
+        if a.style:
+            payload["style"] = a.style
     if a.negative:
         payload["negative_prompt"] = a.negative
     if a.seed is not None:
@@ -161,6 +168,8 @@ def main():
     i.add_argument("--negative", default="")
     i.add_argument("--seed", type=int, default=None)
     i.add_argument("--format", default="jpeg", choices=["jpeg", "png"])
+    i.add_argument("--imgsize", default="", help="recraft only: WIDTHxHEIGHT, e.g. 1600x540")
+    i.add_argument("--style", default="", help="recraft only: e.g. realistic_image, digital_illustration")
     i.add_argument("--out", required=True)
     i.set_defaults(func=cmd_image)
 

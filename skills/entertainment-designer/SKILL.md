@@ -274,56 +274,181 @@ SplitType for headline reveals → Swiper for any carousel. Gate everything behi
 - Video as texture: muted/loop/playsinline `<video>` behind `mix-blend-mode` or
   a `mask`, framed in device mockups, or as a masked accent shape.
 
-## Text-as-image for key areas (buttons, badges, headlines)
+## Push to super high-end (the difference between good and expensive)
 
-Key conversion elements should be **real high-fidelity image assets**, not plain
-CSS. Replace these with generated/composited graphics:
+Great assets aren't enough — these details are what make a page read as premium.
+Apply most of them on every build:
 
-- **CTA buttons** → literal AI-generated button graphics, one image per label
-  (`fal-ai/ideogram/v3` → `imgkit keyout`). Place as
-  `<a class="btn-img"><img alt="<label>"></a>` (label lives in `alt`). Add only
-  hover/press/glow in CSS — never generate hover/active variants.
+**1. Typography (biggest lever).** Don't ship Inter-only. Pair a characterful
+**display** font with a clean body (e.g. a refined serif — Playfair/Fraunces — or
+a distinctive grotesk for the headings; Inter for body). Use a **fluid type
+scale** and tight display tracking:
+```css
+h1{ font-size:clamp(44px,7vw,104px); letter-spacing:-.03em; line-height:1.02; }
+h2{ font-size:clamp(30px,4.6vw,58px); letter-spacing:-.02em; }
+.lede{ font-size:clamp(17px,1.6vw,22px); line-height:1.6; }
+```
+Load via Google Fonts (preconnect) or vendor. One display + one body, no more.
 
-  **Art-direct the button like a designer would** — don't settle for the default
-  candy-gloss pill. Decide a button *style* that matches the brand and write a
-  detailed prompt for it. Useful directions:
-  - *Modern SaaS:* sleek rounded-rectangle, smooth brand-gradient fill, subtle
-    top sheen, soft outer glow, crisp 1px light inner edge, gentle shadow,
-    tasteful and minimal — "Dribbble / Figma quality", a hint of depth, no heavy
-    bevel, no skeuomorphism.
-  - *Premium tactile:* soft-3D with a raised top face and a darker base edge so
-    it looks pressable; clean, not plasticky.
-  - *Editorial / luxe:* flat or near-flat, refined, thin keyline, restrained.
+**2. Generous space & rhythm.** High-end = air. Section padding
+`clamp(80px,12vw,160px)`, large gaps, a consistent spacing scale (8/12/16/24/
+40/64/96). Don't crowd. Let the hero breathe.
 
-  Always specify: exact label text, ONE single line, ultra-wide rounded-rectangle
-  filling the frame, one continuous brand colour (no stripes/two-tone/seam),
-  bold legible text with enough contrast, plain pure-white background, no emoji,
-  no extra icons/stars/punctuation. Example (modern SaaS):
-  ```bash
-  python3 tools/fal.py image --model fal-ai/ideogram/v3 --aspect 3:1 \
-    --prompt "A premium modern SaaS call-to-action button, sleek wide rounded-rectangle filling the frame, smooth violet-to-cyan brand gradient with a subtle soft top sheen and a gentle outer glow, crisp thin light inner edge, soft drop shadow, tasteful Dribbble-quality UI, a hint of depth (no heavy bevel, no skeuomorphism). Bold clean white sans-serif text on ONE single line reading exactly 'GET STARTED FREE'. Single continuous colour, no stripes, no two-tone, no seam, no emoji, no extra icons, no stray punctuation. Plain pure white background." \
-    --out raw/btn-hero.jpg
-  python3 tools/imgkit.py keyout raw/btn-hero.jpg assets/img/btn-hero.png --fuzz 44 --trim --pad 8
+**3. Real motion choreography (make it the default, not an afterthought).** Wire
+the premium stack instead of basic fades: **Lenis** (smooth scroll) + **GSAP +
+ScrollTrigger** (staggered reveals, pinned sections, scrub-linked parallax,
+number tickers) + **SplitType** (headline word/char reveals). Swiper for any
+carousel. Gate on `prefers-reduced-motion`. This single upgrade does the most for
+"feels expensive."
+
+**4. Depth, light & texture.**
+- Layered, soft shadows (not one harsh box-shadow):
+  `box-shadow: 0 2px 6px rgba(0,0,0,.18), 0 20px 50px rgba(0,0,0,.30);`
+- A subtle **grain/noise overlay** over the whole page lifts everything:
+  ```css
+  body::after{ content:""; position:fixed; inset:0; z-index:9999;
+    pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("assets/img/noise.png"); }   /* tiny tiled noise PNG */
   ```
-  Ideogram is **inconsistent** (wraps long labels into a square, goes two-tone/
-  striped, recolours, adds stray punctuation). So keep labels SHORT, force
-  "ultra-wide … ONE single line", and **Read every result — regenerate any that
-  is striped, two-tone, wrong-colour, wrapped, or typo'd.** Generate 2–3
-  candidates for the hero button and keep the best.
-- **Badges / seals / emblems** → generate on solid white, `imgkit keyout`. For a
-  seal with a number (e.g. "30 DAYS"), generate the empty medallion and overlay
-  the number as HTML so it stays crisp.
-- **One-off display text in an image** (a sticker, a stamp, a badge) →
-  `fal-ai/ideogram/v3` renders clean text. It's inconsistent run-to-run, so
-  generate, **Read the result, and regenerate** until correct — keep text short.
+- Colored glows behind focal elements (`filter: drop-shadow` / blurred radial),
+  gradient-mesh / animated `@property` conic backgrounds, glassmorphism done with
+  real `backdrop-filter` + 1px light border + inset highlight.
+
+**5. Detail polish.** Themed scrollbars, custom `::selection`, visible focus
+rings, hover lift+glow on every interactive thing, animated counters, a sticky
+nav that condenses on scroll, tasteful cursor/tilt accents. Consistent radius +
+shadow tokens.
+
+**6. Colour.** Restrained accent + rich neutrals; use `color-mix()` for tints;
+duotone hero imagery via blend modes; never more than ~2 accent hues.
+
+## Make graphics & icons LARGE (impact over timidity)
+
+Undersized graphics read as cheap. Go bigger than feels safe:
+- **Feature/step icons:** 64–96px (not 24–32). Hero/section accent icons larger.
+- **Accent graphics** (orbs, 3D shapes, blobs, mascots, product cut-outs): huge —
+  often 40–70% of the viewport, bleeding off the edges, layered behind/around
+  copy with parallax. A mascot at the final CTA can be 200–360px+.
+- **Headline graphics:** dominant — let them own the hero.
+- **Hero/product imagery:** full-bleed or large framed; use `object-fit:cover`,
+  oversized bleeds (`width:100vw; margin-inline:calc(50% - 50vw)`), big rounded
+  frames with layered shadow. Generate stills at high res so they stay crisp big.
+
+## Best background removal
+Use **`tools/fal.py bg`** (default `fal-ai/birefnet/v2`) — SOTA matting with soft
+anti-aliased alpha (0–255), clean on hair/edges, keeps subject colours that match
+the backdrop. Always follow with `tools/imgkit.py alpha` to trim/resize. (Generate
+the subject at high resolution so the cutout stays sharp when placed large.)
+
+## Buttons: ONE great image CTA + CSS buttons for the rest
+
+Rendering every button as an image is what made past templates look off. The rule:
+
+- **Exactly one hero/primary CTA is a generated image** — the single most
+  important conversion button (reuse that same image for the final CTA if you
+  like). Make it genuinely excellent.
+- **Every other button is a crafted CSS button** (nav, secondary, pricing,
+  ghost). CSS buttons stay crisp at any size, recolour instantly, and never show
+  matting artefacts.
+
+### The one image CTA — use Recraft V3
+Generate buttons with **`fal-ai/recraft-v3`** (a design model) — it renders crisp
+text *integrated into* the button far better than general text-image models, with
+none of the flat "Arial-on-an-image" look. Recraft uses **`--imgsize WIDTHxHEIGHT`**
+(not `--aspect`); pass a **wide** size or you get a circle. Then **`fal.py bg`** +
+`imgkit alpha`. Place as `<a class="btn-cta"><img alt="<label>"></a>`; add hover/
+press/glow in CSS only.
+  ```bash
+  python3 tools/fal.py image --model fal-ai/recraft-v3 --imgsize 1600x520 \
+    --prompt "A premium glossy 3D call-to-action button, one wide horizontal rounded-rectangle <brand> gradient pill spanning the full width, soft bevel and warm sheen, the text '<LABEL>' in bold white on a SINGLE line, crisp professional UI, soft drop shadow, plain white background" \
+    --out raw/btn-cta.jpg
+  python3 tools/fal.py bg raw/btn-cta.jpg raw/btn-cta-cut.png
+  python3 tools/imgkit.py alpha raw/btn-cta-cut.png assets/img/btn-cta.png --pad 6
+  ```
+  Generate **2–3 and keep the best** (crisp text, wide pill, label reads against
+  its own fill). Mirror the visible words in `alt`.
+
+  **Need several image buttons? Generate a SET and crop.** Ask Recraft for a
+  vertical UI kit of 2–3 stacked buttons in one **portrait** image, bg-remove the
+  whole sheet, then `imgkit crop --box` each band. One generation → a consistent
+  family, better-sized than square one-offs:
+  ```bash
+  python3 tools/fal.py image --model fal-ai/recraft-v3 --imgsize 1000x1400 \
+    --prompt "A clean UI kit of three identical wide rounded-rectangle <brand> gradient buttons stacked vertically with even spacing, each glossy with bold white centered text on one line — 'LABEL ONE', 'LABEL TWO', 'LABEL THREE', crisp UI, plain white background" --out raw/btnset.jpg
+  python3 tools/fal.py bg raw/btnset.jpg raw/btnset-cut.png
+  python3 tools/imgkit.py crop raw/btnset-cut.png assets/img/btn-1.png --box "0,0,1,0.34" --size 900
+  python3 tools/imgkit.py crop raw/btnset-cut.png assets/img/btn-2.png --box "0,0.34,1,0.67" --size 900
+  python3 tools/imgkit.py crop raw/btnset-cut.png assets/img/btn-3.png --box "0,0.67,1,1" --size 900
+  ```
+  (Recraft is also the better engine for **headline graphics**, icons, and logos.)
+
+  **Match the button style to the template — don't reuse one look.** Each brand
+  gets its own finish: embossed polished metal (gold/rose-gold/chrome), glossy
+  glass/gel, soft matte 3D, candy gloss, neon-outline, or flat editorial keyline.
+  Derive it from `brand.json` (palette + mood). **Whatever the style, render the
+  TEXT in that same material** — embossed/engraved/extruded and catching the same
+  light — never a flat sans-serif pasted on top (that "Arial-over-an-image" look
+  is the #1 tell of a cheap button). The text must look *made of* the button.
+
+### The CSS buttons (everything else)
+Build one strong reusable `.btn` (+ `.btn-ghost`, sizes) from the brand colours —
+designed, not default. The inset highlight + coloured glow + hover lift is what
+makes it premium. **Pick the label colour from the fill, not habit:** light/gold/
+pastel fills take **dark** ink (≥ 4.5:1), deep fills take light ink; check the
+hover and ghost states too (a ghost label that inherits a page colour can vanish
+on its hover background).
+  ```css
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 28px; border:0; border-radius:999px; font-weight:800; cursor:pointer;
+    color:#fff; background:linear-gradient(180deg,var(--accent),var(--accent-deep));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 26px var(--accent-glow);
+    transition:transform .16s, box-shadow .16s, filter .16s; }
+  .btn:hover { transform:translateY(-2px); filter:brightness(1.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 16px 36px var(--accent-glow); }
+  .btn:active { transform:translateY(0); }
+  .btn:focus-visible { outline:3px solid var(--accent-glow); outline-offset:3px; }
+  .btn-ghost { background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none; }
+  ```
+
+## Headline graphics (make the hero stand out)
+
+Plain text is fine for most sections, but the **hero (and key section headers)
+deserve a headline graphic** — a designed treatment CSS text can't match. You can
+fold a small course/product graphic (ebook, play badge) into the lockup so type +
+icon read as one piece. Two approaches:
+
+- **Typographic headline image** (`fal-ai/ideogram/v3` or `recraft-v3`): the key
+  phrase rendered with a gradient / 3D / chrome / foil treatment on a plain
+  background → `fal.py bg` → place as an `<img>` with the real text in `alt`, plus
+  a visually-hidden heading for SEO/AX. Keep it SHORT; regenerate until the
+  spelling is perfect. **Prefer a LANDSCAPE (wide) aspect** — headlines sit wide
+  in a hero/section, so a 16:9-ish graphic fits and centers far better than a tall
+  square; center it in its container.
+- **No eyebrow over a headline.** Don't stack a small kicker label directly above
+  the headline — it dates the design and competes with the graphic. Lead with the
+  headline; if a kicker is essential, fold it into the copy or a separate badge.
+- **Text + accent graphic:** keep the headline as CSS text but add a large
+  generated graphic behind/around it (gradient orb, 3D object, underline swash,
+  glow shape) so it pops.
+
+Either way, lift it with **CSS**: `filter: drop-shadow(0 14px 30px <glow>)` on the
+graphic, gradient `background-clip:text` on accent words, `text-wrap:balance`, and
+a soft glow layer. A bold headline with drop-shadow + glow reads premium.
+
+## Badges, seals & small text graphics
+- **Badges / seals / emblems** → generate on a plain background, `fal.py bg`. For
+  a seal with a number ("30 DAYS"), generate the empty medallion and overlay the
+  number as HTML so it stays crisp.
+- **One-off display text** (a sticker, a stamp) → `fal-ai/ideogram/v3`; it's
+  inconsistent run-to-run, so **Read the result and regenerate** until correct.
 
 ## Character / host / mascot pattern
 
 To put a creator/host (a person) or a brand mascot on the page:
 
-1. Generate the character/mascot on **solid white** → `imgkit keyout` → a clean
-   transparent cutout. Use it large and recurring (corner widget, hero, section
-   breaks, final CTA). For a mascot, generate a few poses.
+1. Generate the character/mascot on a plain background → **`fal.py bg` →
+   `imgkit alpha`** → a clean transparent cutout. Use it large and recurring
+   (corner widget, hero, section breaks, final CTA). For a mascot, generate poses.
 2. The sticky widget (bottom-right): cutout + a generated play-badge graphic +
    tooltip, wired to a **video modal**.
 3. **The modal embeds a real YouTube video** (placeholder ID) — NOT a generated
