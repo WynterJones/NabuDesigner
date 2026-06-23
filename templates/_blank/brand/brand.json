@@ -1,0 +1,36 @@
+{
+  "name": "TEMPLATE NAME",
+  "tagline": "One-line promise.",
+  "fictional": true,
+  "seed": 10000,
+  "styleSignature": "REPLACE ME — one reusable art-direction sentence prepended to every image prompt. Name the medium (e.g. warm editorial illustration / clean studio photography / bold flat vector), the lighting, the exact palette hexes, the texture, and the mood. End with: No text, no words, no letters.",
+  "engines": {
+    "scenes": "gemini:gemini-2.5-flash-image",
+    "icons": "gemini:gemini-2.5-flash-image",
+    "logo": "gemini:gemini-2.5-flash-image"
+  },
+  "palette": {
+    "ink": "#111827",
+    "muted": "#6b7280",
+    "paper": "#ffffff",
+    "paperStrong": "#f9fafb",
+    "deep": "#0f172a",
+    "deep2": "#1e293b",
+    "accent": "#2563eb",
+    "accent2": "#7c3aed",
+    "gold": "#f59e0b"
+  },
+  "type": {
+    "display": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "body": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 900,
+    "bodyWeight": 400
+  },
+  "radius": "10px",
+  "assets": {
+    "logo": "brand/logo.png",
+    "logoMark": "brand/logo-mark.png",
+    "favicon": "brand/favicon.png",
+    "styleBoard": "brand/style-board.webp"
+  }
+}

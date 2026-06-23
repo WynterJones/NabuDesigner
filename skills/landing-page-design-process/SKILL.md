@@ -1,11 +1,16 @@
 ---
 name: landing-page-design-process
-description: Build or polish premium graphic-heavy static HTML landing-page templates. Use when creating LP-Templates pages, long-form sales letters, offer pages, static HTML funnels, image-rich CTA sections, favicon/icon/image assets, responsive landing pages, animation polish, or final QA for desktop, tablet, and mobile.
+description: Build or polish premium graphic-heavy static HTML landing-page templates with a per-template AI brand identity. Use when creating LP-Templates pages, long-form sales letters, offer pages, static HTML funnels, image-rich CTA sections, AI-generated logo/icon/background/CTA assets, brand styleguides, favicon/icon/image assets, responsive landing pages, animation polish, or final QA for desktop, tablet, and mobile.
 ---
 
 # Landing Page Design Process
 
-Use this skill for LP-Templates work. The output should be a finished static HTML template folder, not a marketing explanation of a template.
+Use this skill for LP-Templates work. The output should be a finished static HTML template folder with a cohesive AI-generated brand identity — not a marketing explanation of a template.
+
+Every template is its own self-contained brand. The thing that makes a template
+look premium and consistent is that the logo, icons, backgrounds, CTA buttons,
+and headline graphics all share one visual identity. That identity is captured in
+`brand/brand.json` as a **style signature** and prepended to every image prompt.
 
 ## Required Inputs
 
@@ -16,8 +21,33 @@ Confirm or infer:
 - Audience and pain points
 - Desired persuasion style
 - Template slug under `templates/`
+- Visual direction (illustration vs photo, mood, palette) — feeds the brand
 
 If details are missing, make conservative fictional assumptions and label them in the template copy only when legally or ethically needed.
+
+Start from the scaffold: `cp -r templates/_blank templates/<slug>`.
+
+## Step 0: Brief And Brand (do this first)
+
+No page art is generated until the brand is locked. Read `tools/IMAGE_PIPELINE.md`
+for engine names, the transparency workflow, and known issues.
+
+- Fill in `brand/brand.json`: name, palette (real hexes), type, a fixed `seed`,
+  and the single `styleSignature` sentence that anchors every image (medium,
+  lighting, exact palette hexes, texture, mood; end with "No text, no words").
+- Generate and post-process the brand assets:
+  - `brand/logo.png` and `brand/logo-mark.png` (Gemini on solid white → `imgkit keyout`).
+  - `brand/favicon.png` (`imgkit favicon` from the mark/logo).
+  - `brand/style-board.webp` (one mood-board image → `imgkit webp`).
+- Build `brand/styleguide.html` showing logo, palette, type, icons, scenes, and
+  CTA together. Use `templates/fishing-course-local-lake/brand/styleguide.html`
+  as the reference. Styleguide pages carry no footer.
+
+Step 0 acceptance:
+
+- `brand.json` has a real palette and a concrete style signature.
+- Logo, mark, and favicon are true-transparent PNGs that read on light and dark.
+- `styleguide.html` opens and every asset on it loads.
 
 ## Step 1: Mockup And Sales Architecture
 
@@ -29,6 +59,11 @@ Build the full page with all sections before visual polish.
 - Keep every CTA wired to a real target section such as `#order`.
 - Include realistic placeholder proof, testimonials, and stats only if the fictional nature is clear in metadata/comments or the template context.
 - Design sections for 360px, 768px, and 1280px from the start.
+- Declare a slot in `assets/prompts/manifest.json` for **every** image the page
+  needs (hero, panels, icons, CTA textures) — id, type, subjectPrompt, post step,
+  output path. The HTML can reference these paths before the files exist.
+- Derive `assets/styles.css` colors from `brand.json` so the palette is one source
+  of truth.
 
 Step 1 acceptance:
 
@@ -36,24 +71,34 @@ Step 1 acceptance:
 - No lorem ipsum remains.
 - Every section has a purpose.
 - The main CTA exists in the hero, middle, offer stack, and final section.
+- The manifest lists every image the page references.
 
-## Step 2: Visual Polish And Asset Build
+## Step 2: Asset Generation And Visual Polish
 
-Turn the mockup into a premium graphic-heavy template.
+Turn the mockup into a premium graphic-heavy template by filling the manifest's
+image slots, then polish.
 
-- Apply `DESIGN_GUIDELINES.md` as the layout, contrast, typography, mobile, and button rubric.
-- Generate or create local background images, product/scene images, icons, favicon, and CTA button images.
-- Use Codex image generation when available for hero/background/product art. If unavailable, create deterministic raster assets with ImageMagick or repo-native SVG/CSS, and state the fallback.
-- Use image-backed primary CTA buttons with a hover-state image or sprite when the design calls for a high-end sales-page feel.
-- Add favicon files and ensure the page references them.
-- Avoid fragile external image dependencies; project-bound assets must live under the template folder.
+- Generate each manifest asset as `brand.json.styleSignature + asset.subjectPrompt`
+  via the engine in `tools/IMAGE_PIPELINE.md`, then run its `post` step with
+  `tools/imgkit.py`. Scenes → webp; icons/logo → generated on white, keyed to
+  transparent. Save originals to `raw/`, finals to `assets/img/`.
+- Generate icons as a set with one shared descriptor so they read as siblings.
+- Always Read each generated file and eyeball it before processing; regenerate duds.
+- Use image-backed primary CTA buttons (texture + hover texture) with the label as
+  HTML over the texture — never bake text into an image.
+- Generate tiny chrome (check marks, arrows, play badges, bullets, stars) as
+  image assets (fal → `imgkit keyout`). Never use emojis or hand-authored/
+  invented SVG icon art; reserve CSS for layout primitives only.
+- Apply `DESIGN_GUIDELINES.md` as the layout, contrast, typography, mobile, and
+  button rubric.
+- Avoid fragile external image dependencies; all assets live under the template folder.
 
 Step 2 acceptance:
 
-- The first viewport has strong product/offer imagery.
+- The first viewport has strong on-brand imagery.
 - CTA buttons have visible hover/focus states.
-- Icons and imagery feel cohesive.
-- The page still works when opened from disk.
+- Logo, icons, scenes, and CTA all share the brand's look.
+- No engine-fallback placeholders remain; the page works opened from disk.
 
 ## Step 3: Motion, Detail Polish, And QA
 
@@ -73,18 +118,32 @@ Step 3 acceptance:
 
 ## File Pattern
 
-Use this folder shape:
+Use this folder shape (copy `templates/_blank`):
 
 ```text
 templates/<template-slug>/
 ├── index.html
-└── assets/
-    ├── styles.css
-    ├── script.js
-    ├── favicon.png
-    ├── hero-*.webp
-    └── cta-*.png
+├── brand/
+│   ├── brand.json          # palette, type, seed, styleSignature (the anchor)
+│   ├── styleguide.html     # visual brand reference (no footer)
+│   ├── logo.png
+│   ├── logo-mark.png
+│   ├── favicon.png
+│   └── style-board.webp
+├── assets/
+│   ├── styles.css          # colors derived from brand.json
+│   ├── script.js
+│   ├── img/                # all generated page imagery
+│   │   ├── hero.webp
+│   │   ├── scene-*.webp
+│   │   ├── icon-*.png      # transparent
+│   │   └── cta*.webp
+│   └── prompts/manifest.json
+└── raw/                    # full-res originals for re-processing
 ```
+
+Tooling: `tools/imgkit.py` (post-processing) and `tools/IMAGE_PIPELINE.md`
+(engines, transparency workflow, known issues).
 
 ## Copy Notes
 

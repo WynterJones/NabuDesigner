@@ -1,0 +1,197 @@
+{
+  "note": "Each prompt is generated as: brand.json.styleSignature + subjectPrompt. fal tier. Scenes -> tools/imgkit.py webp. Icons/logo/chrome/host -> generate on SOLID PURE-WHITE bg, then tools/imgkit.py keyout to transparent PNG. CTA buttons -> fal-ai/ideogram/v3 then keyout. Video -> fal.py video then vidkit web + poster. Reuse seed 50824 across stills for tonal consistency. Filenames are a CONTRACT: index.html references these exact paths.",
+  "seed": 50824,
+  "assets": [
+    {
+      "id": "logo",
+      "type": "logo",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "subjectPrompt": "A minimal premium logo emblem on a solid pure-white background: a stylized upward blueprint arrow forming a clean ascending node-graph mark, geometric, two-tone electric-blue (#3b82f6) to cyan (#22d3ee) gradient with a thin warm-gold (#f5b942) accent line. Flat vector, crisp edges, no enclosing circle, balanced. Pure white background only.",
+      "post": "imgkit keyout --fuzz 30 --trim --pad 56 --size 640",
+      "raw": "raw/logo.jpg",
+      "out": "brand/logo.png"
+    },
+    {
+      "id": "logo-mark",
+      "type": "logo",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "subjectPrompt": "The compact icon-only version of the same ascending node-graph blueprint arrow mark on a solid pure-white background, electric-blue to cyan gradient with a gold accent, square-friendly, bold and legible at small size. Pure white background only.",
+      "post": "imgkit keyout --fuzz 30 --trim --pad 40 --size 512",
+      "raw": "raw/logo-mark.jpg",
+      "out": "brand/logo-mark.png"
+    },
+    {
+      "id": "style-board",
+      "type": "scene",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "16:9",
+      "subjectPrompt": "A premium brand mood board scene: a sleek dark futuristic command desk with floating holographic AI dashboards, glowing electric-blue and cyan data streams, gold highlight accents, particles, cinematic depth. Showcases the brand mood. Leave negative space.",
+      "post": "imgkit webp --max 1600 --quality 84",
+      "raw": "raw/style-board.jpg",
+      "out": "brand/style-board.webp"
+    },
+    {
+      "id": "hero",
+      "type": "scene",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "16:9",
+      "subjectPrompt": "Cinematic hero: a confident futuristic business war-room, a glowing translucent holographic blueprint of an ascending growth system hovering over a dark glossy desk, electric-blue and cyan energy, floating data particles, gold rim light, deep midnight-navy environment. Strong focal point centered-right, generous open negative space on the LEFT for headline + opt-in copy.",
+      "post": "imgkit webp --max 1920 --quality 84",
+      "raw": "raw/hero.jpg",
+      "out": "assets/img/hero.webp"
+    },
+    {
+      "id": "hero-video",
+      "type": "video",
+      "engine": "fal:fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "fromImage": "raw/hero.jpg",
+      "aspect": "16:9",
+      "duration": 5,
+      "subjectPrompt": "Seamless looping idle: the holographic blueprint slowly rotates and pulses with energy, data particles drift upward, soft cyan glow breathes, gentle parallax push-in. Preserve the artwork. No scene change, no camera cut, no large motion. 5-second seamless loop.",
+      "post": "vidkit web --max 1280  &&  vidkit poster",
+      "raw": "raw/hero.mp4",
+      "out": "assets/video/hero.mp4",
+      "poster": "assets/video/hero-poster.jpg"
+    },
+    {
+      "id": "scene-future",
+      "type": "scene",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "16:9",
+      "subjectPrompt": "Aspirational future-pace scene: a relaxed successful entrepreneur silhouette watching automated AI systems run their business on glowing floating panels, calm confident mood, upward growth curves in electric-blue and gold, cinematic. Open space for copy on one side.",
+      "post": "imgkit webp --max 1600 --quality 84",
+      "raw": "raw/scene-future.jpg",
+      "out": "assets/img/scene-future.webp"
+    },
+    {
+      "id": "module-render",
+      "type": "scene",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "4:3",
+      "subjectPrompt": "A premium product render of a free digital course bundle floating on a dark glossy surface: a glowing tablet showing a 5-day lesson interface, a swipe-file booklet, a prompt-pack card deck, an access badge, electric-blue/cyan glow, gold accents, data particles. No readable text on the screens. Dark background.",
+      "post": "imgkit webp --max 1400 --quality 86",
+      "raw": "raw/module-render.jpg",
+      "out": "assets/img/module-render.webp"
+    },
+    {
+      "id": "host",
+      "type": "cutout",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "subjectPrompt": "Studio portrait cutout of 'Marcus Vale', a sharp confident 40s male AI-business mentor, modern dark blazer over a tee, warm approachable but authoritative expression, arms relaxed, lit with electric-blue rim light and soft gold key light, on a solid pure-white background (clean cutout). Head-and-torso, premium editorial quality. Pure white background only.",
+      "post": "imgkit keyout --fuzz 24 --trim --pad 16 --size 900",
+      "raw": "raw/host.jpg",
+      "out": "assets/img/host.png"
+    },
+    {
+      "id": "host-scene",
+      "type": "scene",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "16:9",
+      "subjectPrompt": "Same mentor 'Marcus Vale' seated in a dark futuristic studio presenting to camera, glowing AI dashboards behind him, electric-blue and gold lighting, cinematic VSL thumbnail framing with space for a play button. Premium webinar look.",
+      "post": "imgkit webp --max 1280 --quality 84",
+      "raw": "raw/host-scene.jpg",
+      "out": "assets/img/host-scene.webp"
+    },
+    {
+      "id": "icon-set",
+      "type": "icon",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "shared": "Each icon: a single centered premium 3D glassy icon, electric-blue-to-cyan gradient with gold edge highlight, soft glow, consistent thickness and style so they read as ONE cohesive set, on a solid pure-white background. Pure white background only, one object, no text.",
+      "members": [
+        { "id": "icon-brain", "subject": "a glowing AI brain / neural node", "out": "assets/img/icon-brain.png" },
+        { "id": "icon-clock", "subject": "a clock saving time", "out": "assets/img/icon-clock.png" },
+        { "id": "icon-rocket", "subject": "an upward rocket / growth", "out": "assets/img/icon-rocket.png" },
+        { "id": "icon-gears", "subject": "interlocking automation gears", "out": "assets/img/icon-gears.png" },
+        { "id": "icon-target", "subject": "a target with an arrow in the bullseye", "out": "assets/img/icon-target.png" },
+        { "id": "icon-chart", "subject": "an ascending bar/line growth chart", "out": "assets/img/icon-chart.png" }
+      ],
+      "post": "imgkit keyout --fuzz 30 --trim --pad 36 --size 256 (per member)"
+    },
+    {
+      "id": "chrome-set",
+      "type": "chrome",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "shared": "A single small premium 3D glossy UI glyph, electric-blue/cyan with gold highlight, soft glow, centered on a solid pure-white background. Pure white background only, one shape, no text.",
+      "members": [
+        { "id": "chk-check", "subject": "a bold rounded checkmark", "out": "assets/img/chk-check.png" },
+        { "id": "chk-arrow", "subject": "a rightward arrow", "out": "assets/img/chk-arrow.png" },
+        { "id": "chk-play", "subject": "a play triangle inside a soft rounded button", "out": "assets/img/chk-play.png" },
+        { "id": "chk-star", "subject": "a five-point star", "out": "assets/img/chk-star.png" },
+        { "id": "chk-spark", "subject": "a four-point sparkle", "out": "assets/img/chk-spark.png" }
+      ],
+      "post": "imgkit keyout --fuzz 30 --trim --pad 28 --size 200 (per member)"
+    },
+    {
+      "id": "seal",
+      "type": "badge",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "subjectPrompt": "A premium empty circular medallion/seal badge on a solid pure-white background, brushed gold ring with electric-blue inner glow and a subtle laurel, blank center (NO text, number will be overlaid in HTML). Pure white background only.",
+      "post": "imgkit keyout --fuzz 28 --trim --pad 24 --size 360",
+      "raw": "raw/seal.jpg",
+      "out": "assets/img/seal.png"
+    },
+    {
+      "id": "btn-hero",
+      "type": "button",
+      "engine": "fal:fal-ai/ideogram/v3",
+      "aspect": "3:1",
+      "label": "GET FREE ACCESS",
+      "subjectPrompt": "A premium modern SaaS call-to-action button, sleek wide rounded-rectangle filling the frame, smooth electric-blue (#3b82f6) to cyan (#22d3ee) gradient with a subtle soft top sheen and a gentle outer glow, crisp thin light inner edge, soft drop shadow, tasteful Dribbble-quality UI, a hint of depth (no heavy bevel, no skeuomorphism). Bold clean white sans-serif text on ONE single line reading exactly 'GET FREE ACCESS'. Single continuous colour, no stripes, no two-tone, no seam, no emoji, no extra icons, no stray punctuation. Plain pure white background.",
+      "post": "imgkit keyout --fuzz 44 --trim --pad 8",
+      "raw": "raw/btn-hero.jpg",
+      "out": "assets/img/btn-hero.png"
+    },
+    {
+      "id": "btn-mid",
+      "type": "button",
+      "engine": "fal:fal-ai/ideogram/v3",
+      "aspect": "3:1",
+      "label": "SEND ME THE COURSE",
+      "subjectPrompt": "Same premium modern SaaS button style, sleek wide rounded-rectangle filling the frame, smooth electric-blue to cyan gradient, soft top sheen, gentle outer glow, crisp inner edge, soft shadow. Bold white sans-serif text on ONE single line reading exactly 'SEND ME THE COURSE'. Single continuous colour, no stripes, no two-tone, no seam, no emoji, no icons, no stray punctuation. Plain pure white background.",
+      "post": "imgkit keyout --fuzz 44 --trim --pad 8",
+      "raw": "raw/btn-mid.jpg",
+      "out": "assets/img/btn-mid.png"
+    },
+    {
+      "id": "btn-final",
+      "type": "button",
+      "engine": "fal:fal-ai/ideogram/v3",
+      "aspect": "3:1",
+      "label": "GET INSTANT ACCESS",
+      "subjectPrompt": "A premium tactile gold call-to-action button for the final urgency CTA, sleek wide rounded-rectangle filling the frame, smooth warm-gold (#f5b942) gradient with a subtle top sheen and soft glow, crisp inner edge, soft shadow, Dribbble-quality. Bold dark-navy sans-serif text on ONE single line reading exactly 'GET INSTANT ACCESS'. Single continuous colour, no stripes, no two-tone, no seam, no emoji, no icons, no stray punctuation. Plain pure white background.",
+      "post": "imgkit keyout --fuzz 44 --trim --pad 8",
+      "raw": "raw/btn-final.jpg",
+      "out": "assets/img/btn-final.png"
+    },
+    {
+      "id": "btn-nav",
+      "type": "button",
+      "engine": "fal:fal-ai/ideogram/v3",
+      "aspect": "3:1",
+      "label": "FREE ACCESS",
+      "subjectPrompt": "A compact premium modern SaaS nav button, sleek wide rounded-rectangle filling the frame, smooth electric-blue to cyan gradient, subtle sheen, soft glow, crisp inner edge. Bold white sans-serif text on ONE single line reading exactly 'FREE ACCESS'. Single continuous colour, no stripes, no two-tone, no seam, no emoji, no icons, no stray punctuation. Plain pure white background.",
+      "post": "imgkit keyout --fuzz 44 --trim --pad 8",
+      "raw": "raw/btn-nav.jpg",
+      "out": "assets/img/btn-nav.png"
+    },
+    {
+      "id": "avatars",
+      "type": "cutout",
+      "engine": "fal:fal-ai/flux-pro/v1.1-ultra",
+      "aspect": "1:1",
+      "shared": "A friendly professional headshot portrait, premium soft studio lighting, on a solid pure-white background (clean cutout), warm approachable, business-casual. Pure white background only, one person.",
+      "members": [
+        { "id": "avatar-1", "subject": "a smiling 30s woman entrepreneur", "out": "assets/img/avatar-1.png" },
+        { "id": "avatar-2", "subject": "a confident 40s man agency owner", "out": "assets/img/avatar-2.png" },
+        { "id": "avatar-3", "subject": "a cheerful 30s man founder", "out": "assets/img/avatar-3.png" }
+      ],
+      "post": "imgkit keyout --fuzz 22 --trim --pad 10 --size 320 (per member)"
+    }
+  ]
+}

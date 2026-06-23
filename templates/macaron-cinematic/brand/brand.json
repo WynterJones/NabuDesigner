@@ -1,0 +1,44 @@
+{
+  "name": "The Macaron Method",
+  "tagline": "Bake it. Brand it. Sell it.",
+  "fictional": true,
+  "seed": 88231,
+  "theme": "light patisserie",
+  "price": "$97",
+  "host": "Alysha",
+  "styleSignature": "bright airy premium patisserie photography, soft natural window light, pastel palette of blush pink, cream, pistachio green and warm gold, marble and linen surfaces, delicate glossy macarons, shallow depth of field, elegant appetizing and aspirational, hyper-detailed, professional food and lifestyle photography. No text, no words, no letters.",
+  "engines": {
+    "stills": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "buttons": "fal:fal-ai/ideogram/v3",
+    "video": "fal:fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+    "logo": "fal:fal-ai/flux-pro/v1.1-ultra (on white) + imgkit keyout"
+  },
+  "palette": {
+    "bg": "#fff7f2",
+    "bg2": "#fdeef1",
+    "panel": "#ffffff",
+    "ink": "#3a2230",
+    "muted": "rgba(58,34,48,0.62)",
+    "line": "rgba(58,34,48,0.12)",
+    "pink": "#f2a7c3",
+    "rose": "#e2779b",
+    "roseDeep": "#c85a82",
+    "pistachio": "#a8c686",
+    "gold": "#e8b864",
+    "cream": "#fff7f2"
+  },
+  "type": {
+    "display": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "body": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 900,
+    "bodyWeight": 400
+  },
+  "radius": "16px",
+  "buttonColor": "rose-pink (Ideogram: bright rose-pink gradient, light-top to deep-rose-bottom)",
+  "assets": {
+    "logo": "brand/logo.png",
+    "favicon": "brand/favicon.png",
+    "heroVideo": "assets/video/hero.mp4",
+    "ambientVideo": "assets/video/ambient.mp4"
+  }
+}

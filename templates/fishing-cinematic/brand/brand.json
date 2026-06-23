@@ -1,0 +1,39 @@
+{
+  "name": "Local Lake Secrets",
+  "tagline": "Read the lake. Land the trophy.",
+  "fictional": true,
+  "seed": 73412,
+  "theme": "dark cinematic",
+  "styleSignature": "cinematic premium concept art, dramatic golden-dawn lighting, deep teal and forest-green water with warm amber and gold highlights, atmospheric mist, frozen splash and floating particles, layered depth, shallow depth of field, hyper-detailed, professional game key-art quality, strong focal point. No text, no words, no letters.",
+  "engines": {
+    "stills": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "video": "fal:fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+    "logo": "fal:fal-ai/flux-pro/v1.1-ultra (on white) + imgkit keyout"
+  },
+  "palette": {
+    "bg": "#0a1512",
+    "bg2": "#0e201b",
+    "panel": "#102a23",
+    "ink": "#f4efe2",
+    "muted": "rgba(244,239,226,0.66)",
+    "deep": "#0e342b",
+    "water": "#2f7f84",
+    "reed": "#8fae5d",
+    "gold": "#f1b84b",
+    "amber": "#e8923a",
+    "copper": "#c96e31"
+  },
+  "type": {
+    "display": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "body": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 900,
+    "bodyWeight": 400
+  },
+  "radius": "14px",
+  "assets": {
+    "logo": "brand/logo.png",
+    "favicon": "brand/favicon.png",
+    "heroVideo": "assets/video/hero.mp4",
+    "ambientVideo": "assets/video/lake.mp4"
+  }
+}

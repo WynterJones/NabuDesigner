@@ -1,0 +1,42 @@
+{
+  "name": "AI Profit Blueprint",
+  "tagline": "Put AI to work in your business in 5 days.",
+  "fictional": true,
+  "seed": 50824,
+  "styleSignature": "Premium cinematic 3D tech concept art, dramatic studio lighting with soft volumetric glow and crisp rim light, deep midnight-navy background (#0a0e17 and #131d33) with electric-blue (#3b82f6) and cyan (#22d3ee) energy accents and warm gold (#f5b942) highlights, clean glossy surfaces with subtle floating data particles and faint circuit texture, sophisticated trustworthy futuristic-business mood, sharp focal point and layered depth. No text, no words, no letters.",
+  "styleSignatureWhiteBg": "Premium polished 3D vector render, clean even studio lighting with soft glow, electric-blue (#3b82f6) to cyan (#22d3ee) gradient with a warm gold (#f5b942) accent, glossy crisp surfaces, sophisticated futuristic-business style, single centered isolated subject. Solid pure pure-white seamless studio background, brightly lit, no dark environment, no scenery, no cast shadow, no reflection on the background. No text, no words, no letters.",
+  "_signatureNote": "Use styleSignature for full scenes/heroes/backgrounds (dark navy). Use styleSignatureWhiteBg for any asset that will be keyed out to transparent (logo, mark, icons, chrome, host/avatars, seal, buttons) — the main signature's navy background fights keyout. Always prepend the chosen signature to the subjectPrompt.",
+  "engines": {
+    "scenes": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "icons": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "logo": "fal:fal-ai/flux-pro/v1.1-ultra",
+    "buttons": "fal:fal-ai/ideogram/v3",
+    "video": "fal:fal-ai/kling-video/v2.5-turbo/pro/image-to-video"
+  },
+  "palette": {
+    "ink": "#0a0e17",
+    "muted": "#8a96ad",
+    "paper": "#f7f9fc",
+    "paperStrong": "#ffffff",
+    "deep": "#0d1424",
+    "deep2": "#131d33",
+    "deep3": "#1b2a4a",
+    "accent": "#3b82f6",
+    "accent2": "#22d3ee",
+    "gold": "#f5b942",
+    "line": "rgba(138,150,173,0.18)"
+  },
+  "type": {
+    "display": "Sora, Inter, ui-sans-serif, system-ui, sans-serif",
+    "body": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 800,
+    "bodyWeight": 400
+  },
+  "radius": "14px",
+  "assets": {
+    "logo": "brand/logo.png",
+    "logoMark": "brand/logo-mark.png",
+    "favicon": "brand/favicon.png",
+    "styleBoard": "brand/style-board.webp"
+  }
+}

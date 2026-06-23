@@ -1,0 +1,85 @@
+{
+  "note": "Every prompt below is generated as: styleSignature (from brand.json) + subjectPrompt. Scenes -> webp via tools/imgkit.py. Icons/logo -> generated on solid white, then `imgkit keyout` to transparent PNG. Regenerate any asset by re-running its engine with the same prompt, then the listed post step.",
+  "assets": [
+    {
+      "id": "logo",
+      "type": "logo",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "A single minimal logo emblem centered on a solid pure white background: a stylized leaping bass fish with a subtle lake ripple line, enclosed in a soft rounded-rectangle badge outline. Flat vector, even line weight, two-tone deep forest green (#0e342b) and warm gold (#f1b84b). Heritage outdoor brand feel.",
+      "post": "imgkit keyout --trim --pad 56 --size 640",
+      "out": "brand/logo.png"
+    },
+    {
+      "id": "logo-mark",
+      "type": "logo",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Open leaping-fish line mark (reuses the icon-fish art) for tight spaces and favicon.",
+      "post": "imgkit keyout --trim --pad 40 --size 512 ; imgkit favicon --size 256",
+      "out": "brand/logo-mark.png, brand/favicon.png"
+    },
+    {
+      "id": "hero",
+      "type": "scene",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "A serene local lake at dawn from a grassy bank, gentle mist, soft golden sunrise, distant treeline and reeds, open sky in the upper area. No people, no boats.",
+      "post": "imgkit webp --max 1600 --quality 84",
+      "out": "assets/img/hero.webp"
+    },
+    {
+      "id": "scene-deep",
+      "type": "scene",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "A moody calm lake at dusk, deep forest green and teal, dark water with subtle gold glints, silhouetted reeds and pine treeline. Darker exposure, for dark overlay panels.",
+      "post": "imgkit webp --max 1600 --quality 84",
+      "out": "assets/img/scene-deep.webp"
+    },
+    {
+      "id": "icon-map",
+      "type": "icon",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Minimal line-art icon of a folded paper map with a location pin, on solid pure white. Even medium stroke, deep forest green line with warm gold accent on the pin.",
+      "post": "imgkit keyout --trim --pad 36 --size 256",
+      "out": "assets/img/icon-map.png"
+    },
+    {
+      "id": "icon-lure",
+      "type": "icon",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Minimal line-art icon of a fishing lure with hook, on solid pure white. Deep forest green line with warm gold accent. Matches the icon set.",
+      "post": "imgkit keyout --trim --pad 36 --size 256",
+      "out": "assets/img/icon-lure.png"
+    },
+    {
+      "id": "icon-clock",
+      "type": "icon",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Minimal line-art icon of a clock showing a time window, on solid pure white. Deep forest green line with warm gold highlighted arc. Matches the icon set.",
+      "post": "imgkit keyout --trim --pad 36 --size 256",
+      "out": "assets/img/icon-clock.png"
+    },
+    {
+      "id": "icon-fish",
+      "type": "icon",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Minimal line-art icon of a leaping fish, on solid pure white. Deep forest green line with warm gold accent on the fin. Matches the icon set.",
+      "post": "imgkit keyout --trim --pad 36 --size 256",
+      "out": "assets/img/icon-fish.png"
+    },
+    {
+      "id": "cta",
+      "type": "texture",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Wide horizontal button texture: rich deep forest green water surface at dawn with subtle warm gold reflections and a faint ripple, even lighting for centered button text. No objects, no text.",
+      "post": "crop central water band -> webp q86",
+      "out": "assets/img/cta.webp"
+    },
+    {
+      "id": "cta-hover",
+      "type": "texture",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Wide horizontal button texture: brighter warm gold and copper dawn light over deep green water with a faint ripple. The hover state of cta. No objects, no text.",
+      "post": "crop central water band -> webp q86",
+      "out": "assets/img/cta-hover.webp"
+    }
+  ]
+}

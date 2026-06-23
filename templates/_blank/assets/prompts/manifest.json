@@ -1,0 +1,37 @@
+{
+  "note": "Each prompt is generated as: styleSignature (brand.json) + subjectPrompt. Scenes/textures -> webp via tools/imgkit.py webp. Icons/logo -> generate on solid pure-white background, then `tools/imgkit.py keyout` to transparent PNG. Keep the same `seed` across assets where the engine honours it. Fill this list in during Stage 1 (declare a slot for every image the page needs) and generate in Stage 3.",
+  "assets": [
+    {
+      "id": "logo",
+      "type": "logo",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "A minimal logo emblem on a solid pure white background: <describe mark>. Flat vector, two-tone <colors>.",
+      "post": "imgkit keyout --trim --pad 56 --size 640",
+      "out": "brand/logo.png"
+    },
+    {
+      "id": "hero",
+      "type": "scene",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "<describe the hero scene>. Leave open area where headline copy sits.",
+      "post": "imgkit webp --max 1600 --quality 84",
+      "out": "assets/img/hero.webp"
+    },
+    {
+      "id": "icon-EXAMPLE",
+      "type": "icon",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Minimal line-art icon of <thing> on solid pure white. Matches the icon set.",
+      "post": "imgkit keyout --trim --pad 36 --size 256",
+      "out": "assets/img/icon-EXAMPLE.png"
+    },
+    {
+      "id": "cta",
+      "type": "texture",
+      "engine": "gemini:gemini-2.5-flash-image",
+      "subjectPrompt": "Wide horizontal button texture, even lighting for centered text. No objects, no text.",
+      "post": "crop central band -> webp q86",
+      "out": "assets/img/cta.webp"
+    }
+  ]
+}

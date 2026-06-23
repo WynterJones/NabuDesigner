@@ -1,0 +1,37 @@
+{
+  "name": "Local Lake Secrets",
+  "tagline": "Read the lake you already fish.",
+  "fictional": true,
+  "seed": 73412,
+  "styleSignature": "warm editorial outdoor illustration, soft dawn lake light, muted palette of deep forest green, lake teal, reed green, warm gold and copper on cream paper, subtle paper grain, hand-crafted heritage premium feel, flat illustration with gentle depth, calm and trustworthy. No text, no words, no letters.",
+  "engines": {
+    "scenes": "gemini:gemini-2.5-flash-image",
+    "icons": "gemini:gemini-2.5-flash-image",
+    "logo": "gemini:gemini-2.5-flash-image"
+  },
+  "palette": {
+    "ink": "#10241e",
+    "muted": "#54665e",
+    "paper": "#f7f2e6",
+    "paperStrong": "#fffaf0",
+    "deep": "#0e342b",
+    "deep2": "#16483c",
+    "reed": "#728d43",
+    "gold": "#f1b84b",
+    "copper": "#c96e31",
+    "water": "#2f7f84"
+  },
+  "type": {
+    "display": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "body": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 950,
+    "bodyWeight": 400
+  },
+  "radius": "8px",
+  "assets": {
+    "logo": "brand/logo.png",
+    "logoMark": "brand/logo-mark.png",
+    "favicon": "brand/favicon.png",
+    "styleBoard": "brand/style-board.webp"
+  }
+}

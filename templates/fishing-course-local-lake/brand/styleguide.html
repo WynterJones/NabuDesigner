@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Lake Secrets — Brand Styleguide</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+      :root {
+        --ink: #10241e; --muted: #54665e; --paper: #f7f2e6; --paper-strong: #fffaf0;
+        --deep: #0e342b; --deep2: #16483c; --reed: #728d43; --gold: #f1b84b;
+        --copper: #c96e31; --water: #2f7f84; --edge: rgba(16,36,30,.14);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: linear-gradient(180deg,#fbf7ed,#eef1e8); }
+      .wrap { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 80px; }
+      header.sg { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+      header.sg img { width: 64px; height: 64px; object-fit: contain; }
+      h1 { margin: 0; font-size: 32px; }
+      .lede { color: var(--muted); margin: 4px 0 0; }
+      h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--copper); margin: 48px 0 16px; }
+      .panel { background: var(--paper-strong); border: 1px solid var(--edge); border-radius: 12px; padding: 24px; box-shadow: 0 14px 34px rgba(16,36,30,.07); }
+      .grid { display: grid; gap: 16px; }
+      .logos { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .logos figure { margin: 0; display: grid; place-items: center; gap: 10px; padding: 20px; border: 1px solid var(--edge); border-radius: 10px; }
+      .logos figure.dark { background: var(--deep); color: #fff8e5; }
+      .logos img { height: 96px; object-fit: contain; }
+      figcaption { font-size: 12px; font-weight: 800; color: var(--muted); }
+      .dark figcaption { color: rgba(255,248,229,.75); }
+      .swatches { grid-template-columns: repeat(5, minmax(0,1fr)); }
+      .swatch { border: 1px solid var(--edge); border-radius: 10px; overflow: hidden; }
+      .swatch .chip { height: 76px; }
+      .swatch .meta { padding: 8px 10px; font-size: 12px; }
+      .swatch .meta b { display: block; }
+      .swatch .meta code { color: var(--muted); }
+      .type-row { padding: 10px 0; border-bottom: 1px dashed var(--edge); }
+      .type-row:last-child { border-bottom: 0; }
+      .type-row small { color: var(--muted); font-size: 12px; }
+      .icons { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .icons figure { margin: 0; display: grid; place-items: center; gap: 8px; padding: 18px; border: 1px solid var(--edge); border-radius: 10px; background: var(--paper); }
+      .icons img { width: 56px; height: 56px; }
+      .scenes { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .scenes img { width: 100%; border-radius: 10px; display: block; }
+      .cta-demo { display: flex; gap: 16px; flex-wrap: wrap; }
+      .cta { min-width: 240px; min-height: 64px; display: inline-flex; align-items: center; justify-content: center;
+        color: #fff9e8; font-weight: 950; border-radius: 8px; background: center/100% 100% no-repeat; }
+      .cta.normal { background-image: url("../assets/img/cta.webp"); }
+      .cta.hover { background-image: url("../assets/img/cta-hover.webp"); }
+      .board img { width: 100%; border-radius: 12px; display: block; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="sg">
+        <img src="logo.png" alt="Local Lake Secrets logo">
+        <div>
+          <h1>Local Lake Secrets</h1>
+          <p class="lede">Brand styleguide — every AI-generated asset is built from the shared style signature in <code>brand.json</code>.</p>
+        </div>
+      </header>
+
+      <h2>Logo</h2>
+      <div class="panel grid logos">
+        <figure><img src="logo.png" alt="Primary logo"><figcaption>Primary (badge)</figcaption></figure>
+        <figure><img src="logo-mark.png" alt="Logo mark"><figcaption>Mark</figcaption></figure>
+        <figure class="dark"><img src="logo.png" alt="Logo on dark"><figcaption>On deep green</figcaption></figure>
+      </div>
+
+      <h2>Palette</h2>
+      <div class="panel grid swatches">
+        <div class="swatch"><div class="chip" style="background:#0e342b"></div><div class="meta"><b>Deep</b><code>#0e342b</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#2f7f84"></div><div class="meta"><b>Water</b><code>#2f7f84</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#728d43"></div><div class="meta"><b>Reed</b><code>#728d43</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#f1b84b"></div><div class="meta"><b>Gold</b><code>#f1b84b</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#c96e31"></div><div class="meta"><b>Copper</b><code>#c96e31</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#10241e"></div><div class="meta"><b>Ink</b><code>#10241e</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#54665e"></div><div class="meta"><b>Muted</b><code>#54665e</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#f7f2e6;border-right:1px solid var(--edge)"></div><div class="meta"><b>Paper</b><code>#f7f2e6</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#fffaf0;border-right:1px solid var(--edge)"></div><div class="meta"><b>Paper+</b><code>#fffaf0</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#16483c"></div><div class="meta"><b>Deep 2</b><code>#16483c</code></div></div>
+      </div>
+
+      <h2>Type — Inter</h2>
+      <div class="panel">
+        <div class="type-row"><div style="font-size:48px;font-weight:950;line-height:1.05">Catch more fish.</div><small>Display · 950</small></div>
+        <div class="type-row"><div style="font-size:28px;font-weight:900">Read the lake you already fish.</div><small>Heading · 900</small></div>
+        <div class="type-row"><div style="font-size:16px;color:var(--muted);line-height:1.6;max-width:620px">A practical course that shows you how to read local lake structure and stop wasting the best bite window guessing.</div><small>Body · 400</small></div>
+        <div class="type-row"><div style="font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--copper)">For weekend anglers</div><small>Eyebrow · 900 · uppercase</small></div>
+      </div>
+
+      <h2>Icons</h2>
+      <div class="panel grid icons">
+        <figure><img src="../assets/img/icon-map.png" alt="Map"><figcaption>Spot</figcaption></figure>
+        <figure><img src="../assets/img/icon-lure.png" alt="Lure"><figcaption>Lure</figcaption></figure>
+        <figure><img src="../assets/img/icon-clock.png" alt="Clock"><figcaption>Bite window</figcaption></figure>
+        <figure><img src="../assets/img/icon-fish.png" alt="Fish"><figcaption>Catch</figcaption></figure>
+      </div>
+
+      <h2>Scenes</h2>
+      <div class="panel grid scenes">
+        <img src="../assets/img/hero.webp" alt="Hero dawn lake">
+        <img src="../assets/img/scene-deep.webp" alt="Deep dusk lake">
+      </div>
+
+      <h2>CTA buttons</h2>
+      <div class="panel cta-demo">
+        <span class="cta normal">Get Instant Access&nbsp;-&nbsp;$28</span>
+        <span class="cta hover">Get Instant Access&nbsp;-&nbsp;$28</span>
+      </div>
+
+      <h2>Style board</h2>
+      <div class="panel board"><img src="style-board.webp" alt="Brand style board"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The AI Profit Blueprint — Free 5-Day Mini-Course</title>
+  <meta name="description" content="A free 5-day mini-course that installs a simple AI system in your business — save hours every week and become the sharpest operator in your market. Demo / fictional.">
+  <link rel="icon" type="image/png" href="brand/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- ============ STICKY NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="AI Profit Blueprint home">
+        <img src="brand/logo.png" alt="" class="brand-mark" width="34" height="34">
+        <span class="brand-name">AI&nbsp;Profit Blueprint</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#days">The 5 Days</a>
+        <a href="#host">Your Mentor</a>
+        <a href="#proof">Results</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#optin" class="btn-img btn-nav" data-scroll>
+          <img src="assets/img/btn-nav.png" alt="Get free access">
+        </a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <a class="brand" href="#top">
+        <img src="brand/logo.png" alt="" class="brand-mark" width="32" height="32">
+        <span class="brand-name">AI&nbsp;Profit Blueprint</span>
+      </a>
+      <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-links" aria-label="Mobile">
+      <a href="#days">The 5 Days</a>
+      <a href="#host">Your Mentor</a>
+      <a href="#proof">Results</a>
+      <a href="#faq">FAQ</a>
+      <a href="#optin" class="drawer-cta" data-scroll>Get Free Access</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO (OPT-IN + VSL) ============ -->
+    <section class="hero" id="optin">
+      <div class="hero-media">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+               poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <img class="hero-fallback" src="assets/img/hero.webp" alt="">
+        <div class="hero-scrim"></div>
+        <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="wrap hero-grid reveal">
+        <div class="hero-copy">
+          <span class="eyebrow"><img src="assets/img/chk-spark.png" alt="" class="eyebrow-ico">Free 5-Day Mini-Course</span>
+          <h1 class="hero-h1">
+            Install a Simple AI System That Saves You
+            <span class="grad">Hours Every&nbsp;Week</span> — In Just 5&nbsp;Days
+          </h1>
+          <p class="hero-sub">
+            Your competitors are quietly using AI to move faster, charge more, and
+            do the work of a 5-person team. This free training hands you the exact
+            blueprint to catch up — and pull&nbsp;ahead.
+          </p>
+
+          <form class="optin glass" id="optinForm" novalidate>
+            <label class="optin-label" for="email-hero">Where should we send your first lesson?</label>
+            <div class="optin-row">
+              <input class="input" type="email" id="email-hero" name="email"
+                     placeholder="you@yourbusiness.com" autocomplete="email" required>
+              <button class="btn-img btn-submit" type="submit">
+                <img src="assets/img/btn-hero.png" alt="Get free access">
+              </button>
+            </div>
+            <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+            <p class="trust">
+              <img src="assets/img/chk-check.png" alt="" class="trust-ico">
+              No cost. No fluff. Unsubscribe&nbsp;anytime.
+            </p>
+          </form>
+
+          <ul class="hero-bullets">
+            <li><img src="assets/img/chk-check.png" alt="" class="bul-ico">One lesson a day for 5&nbsp;days</li>
+            <li><img src="assets/img/chk-check.png" alt="" class="bul-ico">Steal-ready prompts &amp; swipe&nbsp;files</li>
+            <li><img src="assets/img/chk-check.png" alt="" class="bul-ico">Zero tech skills&nbsp;required</li>
+          </ul>
+        </div>
+
+        <!-- VSL play card -->
+        <aside class="vsl">
+          <button type="button" class="vsl-card" data-video aria-label="Play the free training video">
+            <img class="vsl-thumb" src="assets/img/host-scene.webp" alt="Marcus Vale presenting the AI Profit Blueprint training">
+            <span class="vsl-play"><img src="assets/img/chk-play.png" alt="Play video"></span>
+            <span class="vsl-tag">Watch the 4-min overview</span>
+          </button>
+          <p class="vsl-caption">See exactly what you'll build before you&nbsp;start.</p>
+        </aside>
+      </div>
+
+      <div class="trustbar wrap reveal">
+        <span class="trustbar-label">Trusted by operators at</span>
+        <div class="logo-shapes" aria-hidden="true">
+          <span class="logo-shape s1"></span>
+          <span class="logo-shape s2"></span>
+          <span class="logo-shape s3"></span>
+          <span class="logo-shape s4"></span>
+          <span class="logo-shape s5"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. AGITATION STRIP ============ -->
+    <section class="agitate" id="agitate">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">The hard truth</span>
+          <h2>If You're Still Doing This by Hand, You're Already&nbsp;Behind</h2>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain reveal">
+            <img src="assets/img/icon-clock.png" alt="" class="pain-ico">
+            <h3>Drowning in busywork</h3>
+            <p>Writing the same emails, posts, and proposals from scratch — burning hours a machine could finish in&nbsp;minutes.</p>
+          </div>
+          <div class="pain reveal">
+            <img src="assets/img/icon-brain.png" alt="" class="pain-ico">
+            <h3>Paralyzed by hype</h3>
+            <p>A hundred shiny tools, a thousand "gurus," and still no clear plan you can actually run&nbsp;Monday.</p>
+          </div>
+          <div class="pain reveal">
+            <img src="assets/img/icon-chart.png" alt="" class="pain-ico">
+            <h3>Watching rivals pull ahead</h3>
+            <p>The competitor you used to out-work is now out-shipping you — quietly, with a&nbsp;system.</p>
+          </div>
+        </div>
+
+        <div class="stat-callout reveal">
+          <div class="stat-num"><span class="count" data-count="11" data-suffix="">0</span></div>
+          <p class="stat-cap">hours the average owner loses every week<br>to work AI could already be&nbsp;doing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. FUTURE-PACE / PROMISE ============ -->
+    <section class="future" id="future">
+      <div class="wrap future-grid">
+        <div class="future-art reveal">
+          <img src="assets/img/scene-future.webp" alt="A relaxed entrepreneur watching automated AI systems run their business">
+          <span class="future-orb"></span>
+        </div>
+        <div class="future-copy reveal">
+          <span class="kicker">Imagine 5 days from now</span>
+          <h2>Picture Your Business Running Like It Has a Full Team — Without&nbsp;One</h2>
+          <p class="lead">
+            You open your laptop and the busywork is already handled. Your content,
+            your follow-ups, your research, your first drafts — done. You spend your
+            day on the moves that actually grow the&nbsp;business.
+          </p>
+          <ul class="future-list">
+            <li><img src="assets/img/chk-arrow.png" alt="" class="li-ico">Reclaim 8–12 hours a week, starting this&nbsp;week.</li>
+            <li><img src="assets/img/chk-arrow.png" alt="" class="li-ico">Out-produce competitors twice your&nbsp;size.</li>
+            <li><img src="assets/img/chk-arrow.png" alt="" class="li-ico">Become the sharpest operator in your&nbsp;market.</li>
+          </ul>
+          <a href="#optin" class="text-cta" data-scroll>
+            Show me the blueprint
+            <img src="assets/img/chk-arrow.png" alt="" class="text-cta-ico">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. THE 5 DAYS ============ -->
+    <section class="days" id="days">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">The 5-day plan</span>
+          <h2>One Short Lesson a Day. By Friday, Your System Is&nbsp;Live.</h2>
+          <p class="sec-sub">No fluff modules. Each day is a single move you install in under 30&nbsp;minutes.</p>
+        </div>
+
+        <div class="day-grid">
+          <article class="day reveal">
+            <span class="day-tag">Day 1</span>
+            <img src="assets/img/icon-brain.png" alt="" class="day-ico">
+            <h3>Your AI Command Center</h3>
+            <p>Set up the one workspace that turns AI from a toy into your unfair&nbsp;advantage.</p>
+          </article>
+          <article class="day reveal">
+            <span class="day-tag">Day 2</span>
+            <img src="assets/img/icon-clock.png" alt="" class="day-ico">
+            <h3>The 30-Minute Content Engine</h3>
+            <p>A week of posts, emails, and offers — drafted before your coffee gets&nbsp;cold.</p>
+          </article>
+          <article class="day reveal">
+            <span class="day-tag">Day 3</span>
+            <img src="assets/img/icon-gears.png" alt="" class="day-ico">
+            <h3>Your First "AI Employee"</h3>
+            <p>The 20-minute build that handles your busywork on autopilot, around the&nbsp;clock.</p>
+          </article>
+          <article class="day reveal">
+            <span class="day-tag">Day 4</span>
+            <img src="assets/img/icon-target.png" alt="" class="day-ico">
+            <h3>Close More, Chase Less</h3>
+            <p>Turn cold leads into booked calls with follow-ups that write&nbsp;themselves.</p>
+          </article>
+          <article class="day reveal day-wide">
+            <span class="day-tag">Day 5</span>
+            <img src="assets/img/icon-rocket.png" alt="" class="day-ico">
+            <h3>Put It All on Autopilot</h3>
+            <p>Wire your 4 systems into one self-running machine — then walk away and let it&nbsp;work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. HOST AUTHORITY ============ -->
+    <section class="host" id="host">
+      <div class="wrap host-grid">
+        <div class="host-art reveal">
+          <img class="host-bg" src="assets/img/host-scene.webp" alt="">
+          <img class="host-cut" src="assets/img/host.png" alt="Marcus Vale, AI-business mentor">
+          <span class="host-glow"></span>
+        </div>
+        <div class="host-copy reveal">
+          <span class="kicker">Your mentor</span>
+          <h2>Meet Marcus&nbsp;Vale</h2>
+          <p class="lead">
+            For 12 years Marcus has helped owners turn messy operations into clean,
+            profitable systems. Since 2023 he's done it with AI — and packed the
+            shortcuts into these 5&nbsp;days.
+          </p>
+          <ul class="host-creds">
+            <li><img src="assets/img/chk-check.png" alt="" class="li-ico">Built AI workflows for 12,000+ business&nbsp;owners.</li>
+            <li><img src="assets/img/chk-check.png" alt="" class="li-ico">Former operator — not a "prompt&nbsp;influencer."</li>
+            <li><img src="assets/img/chk-check.png" alt="" class="li-ico">Obsessed with the simplest path to a&nbsp;result.</li>
+          </ul>
+          <button type="button" class="ghost-cta" data-video>
+            <img src="assets/img/chk-play.png" alt="" class="ghost-ico">
+            Watch Marcus explain the blueprint
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. FASCINATION BULLETS + MID OPT-IN ============ -->
+    <section class="secrets" id="secrets">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">What's inside</span>
+          <h2>A Few of the Secrets You'll Steal This&nbsp;Week</h2>
+        </div>
+
+        <div class="secret-list">
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #1:</strong> the "ugly first draft" trick that gets AI to write like <em>you</em> — not a robot — in one&nbsp;line.</p>
+          </div>
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #2:</strong> why most owners' prompts fail, and the 3-part formula that fixes it&nbsp;instantly.</p>
+          </div>
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #3:</strong> the 20-minute "AI employee" that quietly handles the work you hate&nbsp;most.</p>
+          </div>
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #4:</strong> the follow-up sequence that revives dead leads while you&nbsp;sleep.</p>
+          </div>
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #5:</strong> how to stack 4 simple systems into one machine that runs without&nbsp;you.</p>
+          </div>
+          <div class="secret reveal">
+            <img src="assets/img/chk-spark.png" alt="" class="sec-ico">
+            <p><strong>Secret #6:</strong> the one metric that tells you exactly where AI will make you money&nbsp;first.</p>
+          </div>
+        </div>
+
+        <div class="mid-optin reveal">
+          <div class="mid-copy">
+            <h3>Want all six — plus the prompts — in your&nbsp;inbox?</h3>
+            <p>Drop your email and your first lesson lands in&nbsp;minutes.</p>
+          </div>
+          <form class="optin optin-inline" data-optin novalidate>
+            <div class="optin-row">
+              <input class="input" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required aria-label="Email address">
+              <button class="btn-img btn-submit" type="submit">
+                <img src="assets/img/btn-mid.png" alt="Send me the course">
+              </button>
+            </div>
+            <p class="optin-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. PROOF ============ -->
+    <section class="proof" id="proof">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Real owners, real wins</span>
+          <h2>12,000+ Operators Have Run the&nbsp;Blueprint</h2>
+        </div>
+
+        <div class="stat-strip reveal">
+          <div class="stat">
+            <div class="stat-big"><span class="count" data-count="12000" data-suffix="+">0</span></div>
+            <p>owners trained</p>
+          </div>
+          <div class="stat">
+            <div class="stat-big"><span class="count" data-count="9" data-suffix=" hrs">0</span></div>
+            <p>saved per week, on average</p>
+          </div>
+          <div class="stat">
+            <div class="stat-big"><span class="count" data-count="5" data-suffix=" days">0</span></div>
+            <p>to a live AI system</p>
+          </div>
+          <div class="stat">
+            <div class="stat-big"><span class="count" data-count="4" data-suffix=".9★">0</span></div>
+            <p>average student rating</p>
+          </div>
+        </div>
+
+        <div class="testi-grid">
+          <figure class="testi reveal">
+            <div class="stars">
+              <img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt="">
+            </div>
+            <blockquote>"I built my first 'AI employee' on Day 3 and it now handles every client recap. I got my Fridays&nbsp;back."</blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-1.png" alt="" class="avatar">
+              <span><strong>Dana R.</strong><br>Marketing consultant</span>
+            </figcaption>
+          </figure>
+          <figure class="testi reveal">
+            <div class="stars">
+              <img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt="">
+            </div>
+            <blockquote>"I'd tried every AI course. This is the first one that gave me a <em>plan</em>. We ship twice the work&nbsp;now."</blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-2.png" alt="" class="avatar">
+              <span><strong>Marcus T.</strong><br>Agency owner</span>
+            </figcaption>
+          </figure>
+          <figure class="testi reveal">
+            <div class="stars">
+              <img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt=""><img src="assets/img/chk-star.png" alt="">
+            </div>
+            <blockquote>"Free, five days, no fluff — and I came out with a system that actually runs. Hard to&nbsp;believe."</blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-3.png" alt="" class="avatar">
+              <span><strong>Leo M.</strong><br>SaaS founder</span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="proof-disc">Demonstration testimonials. Results are illustrative and not typical or&nbsp;guaranteed.</p>
+      </div>
+    </section>
+
+    <!-- ============ 8. VALUE STACK ============ -->
+    <section class="value" id="value">
+      <div class="wrap value-grid">
+        <div class="value-art reveal">
+          <img src="assets/img/module-render.webp" alt="The free AI Profit Blueprint bundle: lessons, swipe file, prompt pack and access badge">
+          <div class="seal">
+            <img src="assets/img/seal.png" alt="">
+            <span class="seal-num">$0</span>
+          </div>
+        </div>
+        <div class="value-copy reveal">
+          <span class="kicker">Everything you get</span>
+          <h2>A Complete AI System — Yours Free&nbsp;Today</h2>
+          <ul class="value-list">
+            <li>
+              <img src="assets/img/chk-check.png" alt="" class="li-ico">
+              <span><strong>5 daily video lessons</strong> — the full blueprint, step by step.</span>
+              <span class="li-val">$197</span>
+            </li>
+            <li>
+              <img src="assets/img/chk-check.png" alt="" class="li-ico">
+              <span><strong>The Prompt Pack</strong> — 50+ steal-ready prompts for owners.</span>
+              <span class="li-val">$97</span>
+            </li>
+            <li>
+              <img src="assets/img/chk-check.png" alt="" class="li-ico">
+              <span><strong>The Swipe File</strong> — proven emails, posts &amp; offers.</span>
+              <span class="li-val">$79</span>
+            </li>
+            <li>
+              <img src="assets/img/chk-check.png" alt="" class="li-ico">
+              <span><strong>The Owners' Community</strong> — share wins, get unstuck.</span>
+              <span class="li-val">$149</span>
+            </li>
+          </ul>
+          <div class="value-total">
+            <span class="vt-label">Total value</span>
+            <span class="vt-strike">$522</span>
+            <span class="vt-now">Today: <strong>$0</strong></span>
+          </div>
+          <a href="#optin" class="btn-img btn-value" data-scroll>
+            <img src="assets/img/btn-hero.png" alt="Get free access">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="wrap faq-wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Before you start</span>
+          <h2>Questions, Answered&nbsp;Straight</h2>
+        </div>
+
+        <div class="acc reveal">
+          <div class="acc-item">
+            <button type="button" class="acc-q" aria-expanded="false">
+              Is it really free?
+              <img src="assets/img/chk-arrow.png" alt="" class="acc-ico">
+            </button>
+            <div class="acc-a"><p>Yes — completely. No card, no trial, no catch. We teach this free because a small share of owners later want our advanced programs. The 5 days stand on their&nbsp;own.</p></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-q" aria-expanded="false">
+              Who is this for?
+              <img src="assets/img/chk-arrow.png" alt="" class="acc-ico">
+            </button>
+            <div class="acc-a"><p>Business owners, founders, marketers, and agency owners who feel behind on AI and want a clear, simple plan — not another pile of&nbsp;tools.</p></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-q" aria-expanded="false">
+              Do I need any tech skills?
+              <img src="assets/img/chk-arrow.png" alt="" class="acc-ico">
+            </button>
+            <div class="acc-a"><p>None. If you can send an email, you can run every step. Each lesson is plain-English and built for&nbsp;non-techies.</p></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-q" aria-expanded="false">
+              How much time does it take?
+              <img src="assets/img/chk-arrow.png" alt="" class="acc-ico">
+            </button>
+            <div class="acc-a"><p>About 20–30 minutes a day for 5 days. Watch the lesson, do the one move, move&nbsp;on.</p></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-q" aria-expanded="false">
+              Which AI tools do I need?
+              <img src="assets/img/chk-arrow.png" alt="" class="acc-ico">
+            </button>
+            <div class="acc-a"><p>Just the free tier of the major assistants. We show you exactly what to use — no expensive stack&nbsp;required.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. FINAL OPT-IN (URGENCY + P.S.) ============ -->
+    <section class="final" id="final">
+      <canvas class="particles" id="particles2" aria-hidden="true"></canvas>
+      <div class="wrap final-inner reveal">
+        <span class="eyebrow gold"><img src="assets/img/chk-spark.png" alt="" class="eyebrow-ico">This cohort closes soon</span>
+        <h2 class="final-h2">
+          Your Competitors Won't Wait. <span class="grad-gold">Neither Should&nbsp;You.</span>
+        </h2>
+        <p class="final-sub">
+          Get the full 5-day AI Profit Blueprint free — and start saving hours this&nbsp;week.
+        </p>
+
+        <form class="optin glass final-form" data-optin novalidate>
+          <div class="optin-row">
+            <input class="input" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required aria-label="Email address">
+            <button class="btn-img btn-submit" type="submit">
+              <img src="assets/img/btn-final.png" alt="Get instant access">
+            </button>
+          </div>
+          <p class="optin-msg" role="status" aria-live="polite"></p>
+          <p class="trust">
+            <img src="assets/img/chk-check.png" alt="" class="trust-ico">
+            Instant access. No cost. Unsubscribe&nbsp;anytime.
+          </p>
+        </form>
+
+        <div class="urgency">
+          <img src="assets/img/icon-clock.png" alt="" class="urg-ico">
+          <p>We open a fresh cohort each Monday and cap the live community so we can keep it useful. The bonus Prompt Pack ships with this round&nbsp;only.</p>
+        </div>
+
+        <div class="ps">
+          <img src="assets/img/host.png" alt="Marcus Vale" class="ps-host">
+          <p>
+            <strong>P.S.</strong> — Five days from now you'll either still be doing
+            this by hand, or you'll have a system running it for you. It's free, it's
+            fast, and it's the easiest "yes" you'll make this&nbsp;week. Jump&nbsp;in.
+            <span class="ps-sign">— Marcus&nbsp;Vale</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 11. FOOTER ============ -->
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div class="foot-brand">
+        <img src="brand/logo.png" alt="" class="brand-mark" width="30" height="30">
+        <span class="brand-name">AI&nbsp;Profit Blueprint</span>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#days">The 5 Days</a>
+        <a href="#host">Mentor</a>
+        <a href="#faq">FAQ</a>
+        <a href="#optin" data-scroll>Get Free Access</a>
+      </nav>
+      <p class="foot-legal">
+        &copy; <span id="year">2026</span> AI Profit Blueprint. Fictional demo template — names, testimonials, and results are illustrative and not real. &middot;
+        <a href="#top">Terms</a> &middot; <a href="#top">Privacy</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY HOST WIDGET ============ -->
+  <button type="button" class="host-widget" id="hostWidget" data-video aria-label="Watch a quick intro from Marcus">
+    <img src="assets/img/host.png" alt="" class="hw-cut">
+    <span class="hw-badge"><img src="assets/img/chk-play.png" alt=""></span>
+    <span class="hw-tip">Watch a 4-min intro</span>
+  </button>
+
+  <!-- ============ VIDEO MODAL ============ -->
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Training video">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <button type="button" class="modal-close" data-close aria-label="Close video">&times;</button>
+      <div class="modal-video">
+        <iframe id="ytFrame" src="" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+          title="The AI Profit Blueprint — overview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="modal-foot">
+        <p>Ready to install your own AI system in 5&nbsp;days?</p>
+        <a href="#optin" class="btn-img btn-modal" data-scroll data-close>
+          <img src="assets/img/btn-hero.png" alt="Get free access">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

@@ -4,3 +4,15 @@ dist/
 tmp/
 tmp-*.png
 *.log
+
+# imagegen MCP scratch output (raw generations are copied into each template's raw/)
+outputs/
+__pycache__/
+
+# secrets — never commit
+.env
+.env.*
+*.key
+
+# local tooling metadata
+.farmwork/
