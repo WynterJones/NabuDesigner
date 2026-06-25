@@ -33,46 +33,39 @@ python3 -m http.server 8771        # from repo root
   an offer card with an `INSTANT DOWNLOAD` seal + rotating glow, FAQ accordion,
   starfield final CTA.
 
-## The free download (the ZIP, hosted on GitHub Releases)
+## The free download (the ZIP, served by GitHub Pages)
 
-The kit is a **free** download — no checkout, no signup. Every `[data-buy]` button
-points at a **GitHub Release asset** so GitHub's CDN serves the file and it costs you
-no bandwidth. The link in `assets/script.js` is the stable *latest-release* URL, which
-always resolves to your newest release (so it never needs editing):
+The kit is a **free** download — no checkout, no signup. The ZIP
+(`salespage/nabudesigner-kit.zip`, ~44 MB) lives next to the page and is served by
+**GitHub Pages** (GitHub's CDN), so it costs you no bandwidth. `DOWNLOAD_URL` in
+`assets/script.js` is the same-origin path `"nabudesigner-kit.zip"`, and the `download`
+attribute names the saved file. On the live site it resolves to
+`https://wynterjones.github.io/NabuDesigner/salespage/nabudesigner-kit.zip`.
 
+### Refresh the download whenever the kit changes
+Rebuild the ZIP from the repo root, then commit & push — Pages redeploys it:
+```bash
+rm -f salespage/nabudesigner-kit.zip
+zip -rq salespage/nabudesigner-kit.zip . \
+  -x 'salespage/*' \
+  -x 'index.html' -x '.nojekyll' \
+  -x '.env' -x '.env.*' -x '*.key' \
+  -x '.git/*' \
+  -x 'raw/*' -x '*/raw/*' \
+  -x 'outputs/*' -x '.farmwork/*' \
+  -x '.DS_Store' -x '*/.DS_Store' -x '*.log' \
+  -x 'node_modules/*' -x '*/__pycache__/*' -x '*.pyc'
+git add salespage/nabudesigner-kit.zip && git commit -m "Refresh kit download" && git push
 ```
-https://github.com/WynterJones/NabuDesigner/releases/latest/download/nabudesigner-kit.zip
-```
+The ZIP includes `CLAUDE.md`, `PROMPT.md`, `DESIGN_GUIDELINES.md`, `README.md`,
+`skills/`, `tools/`, and all of `templates/` — **not** `salespage/`, the Pages-only
+root files (`index.html`/`.nojekyll`), or `.env`.
 
-The 44 MB ZIP is **not committed** (it's gitignored) — it lives only on the Release.
-
-### Publish / refresh the download (one-time, then whenever the kit changes)
-1. **Build the ZIP** from the repo root (excludes the sales page, secrets & scratch):
-   ```bash
-   rm -f salespage/nabudesigner-kit.zip
-   zip -rq salespage/nabudesigner-kit.zip . \
-     -x 'salespage/*' \
-     -x '.env' -x '.env.*' -x '*.key' \
-     -x '.git/*' \
-     -x 'raw/*' -x '*/raw/*' \
-     -x 'outputs/*' -x '.farmwork/*' \
-     -x '.DS_Store' -x '*/.DS_Store' -x '*.log' \
-     -x 'node_modules/*' -x '*/__pycache__/*' -x '*.pyc'
-   ```
-   It includes `CLAUDE.md`, `PROMPT.md`, `DESIGN_GUIDELINES.md`, `README.md`,
-   `skills/`, `tools/`, and all of `templates/` — **not** `salespage/` or `.env`.
-2. **Upload it to a GitHub Release** (the repo must be **public** for anonymous
-   downloads to work). Either:
-   - **gh CLI:** `gh release create v1 salespage/nabudesigner-kit.zip -t "NabuDesigner kit"`
-     (for later updates: `gh release upload v1 salespage/nabudesigner-kit.zip --clobber`), or
-   - **Web UI:** repo → *Releases* → *Draft a new release* → pick a tag → drag in the
-     ZIP → *Publish*.
-
-   Keep the asset filename **`nabudesigner-kit.zip`** so the latest-release URL resolves.
-
-> Prefer to self-host instead? Set `DOWNLOAD_URL` in `assets/script.js` to a same-origin
-> path like `"nabudesigner-kit.zip"`, drop the ZIP next to `index.html`, and the
-> `download` attribute will name the saved file.
+> Want to keep the 44 MB out of git instead? Upload the same ZIP to a **GitHub Release**
+> and set `DOWNLOAD_URL` to
+> `https://github.com/WynterJones/NabuDesigner/releases/latest/download/nabudesigner-kit.zip`
+> (the script already handles the cross-origin case). GitHub serves Release assets as
+> attachments, so the button still downloads directly.
 
 **Template preview links** point at `../templates/<slug>/index.html`, so the
 `templates/` folder must be served alongside `salespage/` (it is, when you serve the

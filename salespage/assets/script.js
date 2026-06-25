@@ -3,14 +3,13 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ====== CONFIG — the free download ===================================
-     The kit ZIP is hosted as a GitHub Release asset (GitHub's CDN serves
-     it, so the download costs you no bandwidth). The "/releases/latest/"
-     URL always points at your newest release, so it never needs changing.
-     To publish/refresh it: build salespage/nabudesigner-kit.zip from the
-     repo root (see salespage/README.md) and upload it to a GitHub Release.
-     Self-hosting instead? Set DOWNLOAD_URL to a same-origin path like
-     "nabudesigner-kit.zip" and the download attribute will name the file. */
-  var DOWNLOAD_URL = "https://github.com/WynterJones/NabuDesigner/releases/latest/download/nabudesigner-kit.zip";
+     The kit ZIP sits next to this page and is served by GitHub Pages
+     (GitHub's CDN — so the download costs you no bandwidth, no signup,
+     no checkout). Rebuild salespage/nabudesigner-kit.zip from the repo
+     root whenever the kit changes (see salespage/README.md), commit, push.
+     Want a Release asset instead? Set DOWNLOAD_URL to the full
+     https://github.com/<you>/<repo>/releases/latest/download/<file> URL. */
+  var DOWNLOAD_URL = "nabudesigner-kit.zip";
   /* ===================================================================== */
 
   var sameOrigin = !/^https?:\/\//i.test(DOWNLOAD_URL);
