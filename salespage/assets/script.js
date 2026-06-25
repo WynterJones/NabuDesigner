@@ -10,7 +10,7 @@
      repo root (see salespage/README.md) and upload it to a GitHub Release.
      Self-hosting instead? Set DOWNLOAD_URL to a same-origin path like
      "nabudesigner-kit.zip" and the download attribute will name the file. */
-  var DOWNLOAD_URL = "https://github.com/WynterJones/Martingale/releases/latest/download/nabudesigner-kit.zip";
+  var DOWNLOAD_URL = "https://github.com/WynterJones/NabuDesigner/releases/latest/download/nabudesigner-kit.zip";
   /* ===================================================================== */
 
   var sameOrigin = !/^https?:\/\//i.test(DOWNLOAD_URL);

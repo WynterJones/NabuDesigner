@@ -41,7 +41,7 @@ no bandwidth. The link in `assets/script.js` is the stable *latest-release* URL,
 always resolves to your newest release (so it never needs editing):
 
 ```
-https://github.com/WynterJones/Martingale/releases/latest/download/nabudesigner-kit.zip
+https://github.com/WynterJones/NabuDesigner/releases/latest/download/nabudesigner-kit.zip
 ```
 
 The 44 MB ZIP is **not committed** (it's gitignored) — it lives only on the Release.
