@@ -90,26 +90,23 @@
   }
 
   /* Bob video modal */
-  var fab = document.getElementById("bobFab");
   var modal = document.getElementById("bobModal");
   var player = document.getElementById("bobPlayer");
-  if (fab && modal && player) {
+  if (modal && player) {
     var modalClose = document.getElementById("bobClose");
     function openModal() {
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
-      fab.style.display = "none";
       try { player.currentTime = 0; player.play(); } catch (e) {}
     }
     function closeModal() {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-      fab.style.display = "";
       player.pause();
     }
-    fab.addEventListener("click", openModal);
+
     var reel = document.getElementById("reelStick");
     if (reel) reel.addEventListener("click", openModal);
     modalClose.addEventListener("click", closeModal);
